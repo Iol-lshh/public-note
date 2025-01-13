@@ -33,6 +33,7 @@
 
 # 2. Spring Data JPA의 작동 방식
 - Spring Data JPA는 기본적인 CRUD 작업을 위한 구현을 제공하여 JPA 저장소 생성을 간소화하는 프레임워크입니다. 이는 Java Persistence API(JPA)를 기반으로 하며, 관계형 데이터베이스의 데이터 접근 계층 개발을 단순화합니다.
+
 ![](./img/img_jpa.jpg)
 
 ## 1. 엔티티 매핑
