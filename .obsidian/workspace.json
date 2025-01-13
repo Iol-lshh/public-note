@@ -4,19 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "5d576192fe06411b",
+        "id": "77866c0019f05110",
         "type": "tabs",
         "children": [
           {
-            "id": "c735e93a949fbb80",
+            "id": "da67856c5581e512",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "java/img/Pasted image 20250112204558.jpg"
+                "file": "java/basic java/1. Java 환경.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20250112204558"
+              "icon": "lucide-file",
+              "title": "1. Java 환경"
             }
           }
         ]
@@ -91,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/img/Pasted image 20250112204558.jpg",
+                "file": "java/basic java/1. Java 환경.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -101,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Pasted image 20250112204558의 백링크"
+              "title": "1. Java 환경의 백링크"
             }
           },
           {
@@ -110,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/img/Pasted image 20250112204558.jpg",
+                "file": "java/basic java/1. Java 환경.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Pasted image 20250112204558의 나가는 링크"
+              "title": "1. Java 환경의 나가는 링크"
             }
           },
           {
@@ -137,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/img/Pasted image 20250112204558.jpg"
+                "file": "java/basic java/1. Java 환경.md"
               },
               "icon": "lucide-list",
-              "title": "Pasted image 20250112204558 개요"
+              "title": "1. Java 환경 개요"
             }
           }
         ]
@@ -160,33 +162,34 @@
       "command-palette:명령어 팔레트 열기": false
     }
   },
-  "active": "c735e93a949fbb80",
+  "active": "da67856c5581e512",
   "lastOpenFiles": [
-    "java/img/Pasted image 20250112203901.jpg",
-    "java/img/img_Java_Optional.png",
+    "java/basic java/3. Spring Boot - Classic Layered.md",
+    "java/basic java/2. Java API.md",
+    "java/basic java/1. Java 환경.md",
+    "java/basic java/img/IMG_1253.png",
+    "java/basic java/img/IMG_1251.png",
+    "java/basic java/img/IMG_1250.png",
+    "java/basic java/img/IMG_1254.jpeg",
+    "java/basic java/img/IMG_1249.png",
+    "java/basic java/img/IMG_1260.gif",
+    "java/basic java/0. 목차.md",
     "java/actuator.md",
     "java/Java 문법.md",
     "java/JPA.md",
-    "java/basic java/1. Java 환경.md",
-    "java/basic java/2. Java API.md",
-    "java/basic java/0. 목차.md",
-    "java/basic java/img/IMG_1261.gif",
-    "java/basic java/img/IMG_1257.jpeg",
-    "java/basic java/img/IMG_1256.jpeg",
+    "java/test.md",
+    "java/img/IMG_1263.jpeg",
+    "java/clean",
+    "java/img/Pasted image 20250112204558.jpg",
+    "java/img/Pasted image 20250112203901.jpg",
+    "java/img/img_Java_Optional.png",
     "java/basic java/6. 테스트.md",
     "java/basic java/img",
     "java/basic java/5. Gradle.md",
     "java/basic java/4. Spring 구조.md",
-    "java/basic java/3. Spring Boot - Classic Layered.md",
     "java/basic java",
     "old/java/spring/active_profiles.md",
-    "old/java/spring/img_Security_Refresh.png",
-    "old/java/spring/img_Security_Achitecture.png",
-    "old/java/spring/img_Security_Access.png",
-    "old/java/spring/img_Jwt.png",
-    "old/java/test/IMG_1263.jpeg",
     "old/java/test/클린 테스트 코드.md",
-    "old/java/reflection/without_reflection.png",
     "old/java/reflection/readme.md",
     "old/java/reflection/08_Proxy.md",
     "old/java/reflection/07_Annotation.md",
@@ -201,12 +204,10 @@
     "old/practice/tdd.md",
     "old/practice/lock.md",
     "old/practice/impressed_book.md",
-    "old/practice/computer_science_basic.md",
     "old/java/java",
     "old/java/test",
     "old/java/jpa",
     "old/front/react",
-    "old/front/vue/img",
-    "old/front/vue/vue_lecture/01_basics-01-starting-code/index.html"
+    "old/front/vue/img"
   ]
 }
