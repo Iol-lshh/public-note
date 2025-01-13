@@ -4,7 +4,7 @@
 # 1. JDBC vs JPA
 - Java에서 관계형 데이터베이스를 사용할 때, **JDBC**(Java Database Connectivity)와 **JPA**(Java Persistence API)는 두 가지 대표적인 접근 방식입니다. 두 방식 모두 데이터 영속화를 목적으로 하지만, 작동 방식에는 큰 차이가 있습니다.
 
-![](Pasted%20image%2020250112204558.jpg)
+![](./img/img_jpajdbc.jpg)
 
 ## **JDBC** (Java Database Connectivity)
 - **정의**: 관계형 데이터베이스와 직접 상호작용하기 위한 Java의 저수준 API.
@@ -33,7 +33,7 @@
 
 # 2. Spring Data JPA의 작동 방식
 - Spring Data JPA는 기본적인 CRUD 작업을 위한 구현을 제공하여 JPA 저장소 생성을 간소화하는 프레임워크입니다. 이는 Java Persistence API(JPA)를 기반으로 하며, 관계형 데이터베이스의 데이터 접근 계층 개발을 단순화합니다.
-![](Pasted%20image%2020250112203901.jpg)
+![](./img/img_jpa.jpg)
 
 ## 1. 엔티티 매핑
 - 엔티티 클래스를 정의하고 `@Entity`, `@Table`, `@Column` 등의 JPA 애너테이션을 사용해 매핑합니다.
