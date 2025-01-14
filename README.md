@@ -8,6 +8,6 @@
 - [MSA 이론](old/practice/whats_msa.md)
 - [git: branch](old/cicd/git/branch.md)
 - [docker](old/infra/docker/doc_docker.md)
-- [RDBMS MVCC - PostgerSQL vs MySQL](old/db/sql/MVCC_PostgerSQL_vs_MySQL.md)
-	- [RDS](old/aws/RDS.md)
+- [RDBMS MVCC - PostgerSQL vs MySQL](old/db/sql/MVCC/MVCC_PostgerSQL_vs_MySQL.md)
+	- [RDS](old/infra/aws/RDS.md)
 - [Vue.js](old/front/vue/readme.md)
