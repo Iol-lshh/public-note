@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/JPA.md",
+                "file": "java/GraalVM vs JVM.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JPA"
+              "title": "GraalVM vs JVM"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/JPA.md",
+                "file": "java/GraalVM vs JVM.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "JPA의 백링크"
+              "title": "GraalVM vs JVM의 백링크"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/JPA.md",
+                "file": "java/GraalVM vs JVM.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "JPA의 나가는 링크"
+              "title": "GraalVM vs JVM의 나가는 링크"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/JPA.md"
+                "file": "java/GraalVM vs JVM.md"
               },
               "icon": "lucide-list",
-              "title": "JPA 개요"
+              "title": "GraalVM vs JVM 개요"
             }
           }
         ]
@@ -164,6 +164,14 @@
   },
   "active": "da67856c5581e512",
   "lastOpenFiles": [
+    "java/test.md",
+    "java/basic java/img/IMG_1258.jpeg",
+    "java/GraalVM vs JVM.md",
+    "java/basic java/img/IMG_1264.webp",
+    "java/img/IMG_1265.webp",
+    "java/basic java/img/IMG_1262.gif",
+    "java/img/IMG_1266.webp",
+    "java/JPA.md",
     "java/basic java/1. Java 환경.md",
     "java/basic java/4. Spring 구조.md",
     "java/basic java/5. Gradle.md",
@@ -171,8 +179,6 @@
     "java/basic java/3. Spring Boot - Classic Layered.md",
     "java/basic java/2. Java API.md",
     "java/basic java/0. 목차.md",
-    "java/test.md",
-    "java/JPA.md",
     "java/actuator.md",
     "java/Java 문법.md",
     "java/img/img_jpajdbc.jpg",
@@ -180,12 +186,7 @@
     "java/basic java/img/IMG_1253.png",
     "java/basic java/img/IMG_1251.png",
     "java/basic java/img/IMG_1250.png",
-    "java/basic java/img/IMG_1254.jpeg",
-    "java/basic java/img/IMG_1249.png",
-    "java/basic java/img/IMG_1260.gif",
-    "java/img/IMG_1263.jpeg",
     "java/clean",
-    "java/img/img_Java_Optional.png",
     "java/basic java/img",
     "java/basic java",
     "old/java/spring/active_profiles.md",
@@ -203,7 +204,6 @@
     "old/java/reflection/01_what_is_reflection.md",
     "old/practice/tdd.md",
     "old/practice/lock.md",
-    "old/practice/impressed_book.md",
     "old/java/java",
     "old/java/test",
     "old/java/jpa",
