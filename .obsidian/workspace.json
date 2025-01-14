@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/GraalVM vs JVM.md",
+                "file": "README.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GraalVM vs JVM"
+              "title": "README"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/GraalVM vs JVM.md",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "GraalVM vs JVM의 백링크"
+              "title": "README의 백링크"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/GraalVM vs JVM.md",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "GraalVM vs JVM의 나가는 링크"
+              "title": "README의 나가는 링크"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/GraalVM vs JVM.md"
+                "file": "README.md"
               },
               "icon": "lucide-list",
-              "title": "GraalVM vs JVM 개요"
+              "title": "README 개요"
             }
           }
         ]
@@ -165,13 +165,17 @@
   "active": "da67856c5581e512",
   "lastOpenFiles": [
     "java/test.md",
-    "java/basic java/img/IMG_1258.jpeg",
+    "README.md",
+    "java/actuator.md",
+    "java/JPA.md",
+    "old/practice/computer_science_basic.md",
+    "old/practice/tdd.md",
     "java/GraalVM vs JVM.md",
+    "java/basic java/img/IMG_1258.jpeg",
     "java/basic java/img/IMG_1264.webp",
     "java/img/IMG_1265.webp",
     "java/basic java/img/IMG_1262.gif",
     "java/img/IMG_1266.webp",
-    "java/JPA.md",
     "java/basic java/1. Java 환경.md",
     "java/basic java/4. Spring 구조.md",
     "java/basic java/5. Gradle.md",
@@ -179,7 +183,6 @@
     "java/basic java/3. Spring Boot - Classic Layered.md",
     "java/basic java/2. Java API.md",
     "java/basic java/0. 목차.md",
-    "java/actuator.md",
     "java/Java 문법.md",
     "java/img/img_jpajdbc.jpg",
     "java/img/img_jpa.jpg",
@@ -199,10 +202,8 @@
     "old/java/reflection/02_Class_객체.md",
     "old/java/java/Lock.md",
     "java/img",
-    "README.md",
     "java",
     "old/java/reflection/01_what_is_reflection.md",
-    "old/practice/tdd.md",
     "old/practice/lock.md",
     "old/java/java",
     "old/java/test",
