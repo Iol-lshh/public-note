@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/GraalVM vs JVM.md",
+                "file": "java/basic java/2. Java API.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "GraalVM vs JVM"
+              "title": "2. Java API"
             }
           }
         ],
@@ -161,13 +161,15 @@
   },
   "active": "ebc9d9d2b70a38a1",
   "lastOpenFiles": [
+    "java/JVM.md",
+    "java/Java 문법.md",
     "java/basic java/2. Java API.md",
+    "java/basic java/img/IMG_1267.webp",
+    "java/basic java/1. Java 환경.md",
     "java/GraalVM vs JVM.md",
     "java/img/IMG_1266.webp",
     "java/img/IMG_1265.webp",
-    "java/basic java/1. Java 환경.md",
     "java/basic java/img/IMG_1264.webp",
-    "java/Java 문법.md",
     "java/basic java/img/IMG_1258.jpeg",
     "java/basic java/img/IMG_1262.gif",
     "java/basic java/0. 목차.md",
