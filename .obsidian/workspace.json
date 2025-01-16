@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/JVM.md",
+                "file": "java/basic java/3. Layered Architecture.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "JVM"
+              "title": "3. Layered Architecture"
             }
           }
         ]
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "java/JVM.md",
+                "file": "java/basic java/3. Layered Architecture.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +103,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "JVM의 백링크"
+              "title": "3. Layered Architecture의 백링크"
             }
           },
           {
@@ -112,12 +112,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "java/JVM.md",
+                "file": "java/basic java/3. Layered Architecture.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "JVM의 나가는 링크"
+              "title": "3. Layered Architecture의 나가는 링크"
             }
           },
           {
@@ -139,10 +139,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "java/JVM.md"
+                "file": "java/basic java/3. Layered Architecture.md"
               },
               "icon": "lucide-list",
-              "title": "JVM 개요"
+              "title": "3. Layered Architecture 개요"
             }
           }
         ]
@@ -164,6 +164,19 @@
   },
   "active": "da67856c5581e512",
   "lastOpenFiles": [
+    "java/basic java/2. Java API.md",
+    "java/basic java/1. Java 환경.md",
+    "java/basic java/0. 목차.md",
+    "pattern/데이터는 어디서나 캐싱된다 - 프론트엔드부터 백엔드까지!.md",
+    "pattern/img/1E652F5B-8F47-4D6B-921A-9D120439A12B.jpeg",
+    "pattern/img",
+    "java/basic java/3. Layered Architecture.md",
+    "pattern",
+    "java/basic java/4. SpringBoot.md",
+    "java/basic java/무제 파일.md",
+    "java/basic java/3. Spring Boot - Classic Layered.md",
+    "java/Java 문법.md",
+    "java/JVM.md",
     "java/img/IMG_1252.png",
     "java/img/IMG_1253.png",
     "java/img/IMG_1251.png",
@@ -172,7 +185,6 @@
     "java/img/IMG_1249.png",
     "java/img/IMG_1260.gif",
     "README.md",
-    "java/JVM.md",
     "java/basic java/img/IMG_1267.webp",
     "java/test.md",
     "java/actuator.md",
@@ -181,16 +193,9 @@
     "old/practice/tdd.md",
     "java/GraalVM vs JVM.md",
     "java/basic java/img/IMG_1258.jpeg",
-    "java/basic java/img/IMG_1264.webp",
-    "java/img/IMG_1265.webp",
-    "java/basic java/1. Java 환경.md",
     "java/basic java/4. Spring 구조.md",
     "java/basic java/5. Gradle.md",
     "java/basic java/6. 테스트.md",
-    "java/basic java/3. Spring Boot - Classic Layered.md",
-    "java/basic java/2. Java API.md",
-    "java/basic java/0. 목차.md",
-    "java/Java 문법.md",
     "java/clean",
     "java/basic java/img",
     "java/basic java",
@@ -199,16 +204,10 @@
     "old/java/reflection/readme.md",
     "old/java/reflection/08_Proxy.md",
     "old/java/reflection/07_Annotation.md",
-    "old/java/reflection/04_Field_객체.md",
-    "old/java/reflection/03_Constructor_객체.md",
-    "old/java/reflection/02_Class_객체.md",
-    "old/java/java/Lock.md",
     "java/img",
     "java",
     "old/java/java",
     "old/java/test",
-    "old/java/jpa",
-    "old/front/react",
-    "old/front/vue/img"
+    "old/java/jpa"
   ]
 }

@@ -1,4 +1,5 @@
 # Why redis is fast?
+
 1. all data is sotred in memory
     - 레디스는 메모리에만 데이터를 저장하기 때문에 빠르다.
 2. Data is organized in simple data structures
@@ -17,9 +18,11 @@
         - 트랜잭션과 롤백을 지원하지도 않는다
 
 ## goal
+
 - 이런 단순한 구조의 레디스로 어떻게 작업해야할지 알아야 한다. 
 
-# setup
+## setup
+
 1. install redis
     - redis cloud인 redis.com에 인스턴스 생성
     - 설치하고, 로컬에서 실행
@@ -29,8 +32,8 @@
     - 로컬에서 rbook 사용
     - Redis-CLI 사용
 
-## local
+### local
+
 1. node.js 설치
 2. npx rbook
 3. http://localhost:3050
-

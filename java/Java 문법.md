@@ -89,7 +89,6 @@
 - 기본 타입
     - byte, int, char, boolean ...
     - 변수의 메모리 위치에 바로 값을 가진다.
-
 ### 0.3.2 Call by Reference
 - Array, Object
 - Copy
