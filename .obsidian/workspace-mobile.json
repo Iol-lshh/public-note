@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/basic java/무제 파일.md",
+                "file": "java/SpringBoot + Docker Compose.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "무제 파일"
+              "title": "SpringBoot + Docker Compose"
             }
           }
         ],
@@ -124,7 +124,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "java/GraalVM vs JVM.md",
+            "file": "java/SpringBoot + Docker Compose.md",
             "collapseAll": false,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -175,8 +175,9 @@
   },
   "active": "f7c4c771a8491625",
   "lastOpenFiles": [
+    "java/test.md",
+    "java/SpringBoot + Docker Compose.md",
     "java/basic java/3. Layered Architecture.md",
-    "java/basic java/무제 파일.md",
     "java/JPA.md",
     "java/basic java/4. SpringBoot.md",
     "java/basic java/2. Java API.md",
