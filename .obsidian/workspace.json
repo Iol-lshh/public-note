@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/basic java/1. Java 환경.md",
+                "file": "java/basic java/0. 목차.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Java 환경"
+              "title": "0. 목차"
             }
           }
         ]
@@ -175,8 +175,10 @@
   },
   "active": "da67856c5581e512",
   "lastOpenFiles": [
-    "java/basic java/5. Gradle.md",
     "java/basic java/4. SpringBoot.md",
+    "java/basic java/0. 목차.md",
+    "java/basic java/1. Java 환경.md",
+    "java/basic java/5. Gradle.md",
     "java/basic java/6. 테스트.md",
     "java/actuator.md",
     "java/GraalVM vs JVM.md",
@@ -185,7 +187,6 @@
     "java/basic java/3. Layered Architecture.md",
     "java/basic java/2. Java API.md",
     "java/basic java/README.md",
-    "java/basic java/1. Java 환경.md",
     "java/basic java/img/Pasted image 20250119170652.png",
     "java/basic java/img/Pasted image 20250119161740.png",
     "java/basic java/img/Pasted image 20250119160116.png",
@@ -199,7 +200,6 @@
     "java/JVM.md",
     "java/JPA.md",
     "java/Java 문법.md",
-    "java/basic java/0. 목차.md",
     "pattern/데이터는 어디서나 캐싱된다 - 프론트엔드부터 백엔드까지!.md",
     "pattern/img",
     "pattern",
