@@ -2,7 +2,7 @@
 - java
 	- [Java 문법](java/Java%20문법.md)
 	- [JPA](java/JPA.md)
-	- [actuator](java/actuator.md)
+	- [actuator](java/Spring/actuator.md)
 	- [GraalVM vs JVM](java/GraalVM%20vs%20JVM.md)
 - [javascript](old/javascript/doc_Js_Style.md)
 - [MSA 이론](old/practice/whats_msa.md)

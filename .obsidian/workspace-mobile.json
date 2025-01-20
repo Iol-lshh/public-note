@@ -41,12 +41,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "java/SpringBoot + Docker Compose.md",
+                "file": "java/basic java/4. SpringBoot.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "SpringBoot + Docker Compose"
+              "title": "4. SpringBoot"
             }
           }
         ],
@@ -170,21 +170,22 @@
       "canvas:새 캔버스 만들기": false,
       "daily-notes:오늘의 데일리 노트 열기": false,
       "templates:템플릿 삽입": false,
-      "command-palette:명령어 팔레트 열기": false
+      "command-palette:명령어 팔레트 열기": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "f7c4c771a8491625",
   "lastOpenFiles": [
-    "java/test.md",
+    "java/basic java/5. Gradle.md",
+    "java/basic java/6. 테스트.md",
     "java/SpringBoot + Docker Compose.md",
+    "java/test.md",
     "java/basic java/3. Layered Architecture.md",
     "java/JPA.md",
     "java/basic java/4. SpringBoot.md",
     "java/basic java/2. Java API.md",
     "java/basic java/1. Java 환경.md",
     "java/basic java/0. 목차.md",
-    "java/basic java/6. 테스트.md",
-    "java/basic java/5. Gradle.md",
     "java/img/IMG_1253.png",
     "java/img/IMG_1252.png",
     "java/img/IMG_1250.png",
