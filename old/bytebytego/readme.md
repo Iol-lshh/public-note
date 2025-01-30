@@ -1,2 +1,0 @@
-- [index](index.md)
-- [categorizing](categorizing.md)
