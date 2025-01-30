@@ -1,0 +1,21 @@
+# impressed book (최신순)
+- Tidy First
+  - Kent Beck, 2024
+- Get Your Hands Dirty on Clean Architecture
+  - Tom Homberg, 2019
+- Software Engineering at Google
+  - Titus Winters 외 2명, 2020
+- Operating Systems: Three Easy Pieces  
+  - Remzi H. Arpaci-Dusseau 외 1명, 2015
+- Design Patterns for Cloud Native Applications
+  - Kassun Idrasiri 외 1명, 2021
+- Optimizing Java
+  - Chris Newland 외 3명, 2018
+- Clean Code
+  - Robert C. Martin, 2009
+- 모던 자바스크립트 Deep Dive
+  - 이웅모, 2020
+- 디비로 누리는 특별한 세상 SQL Server 개발편
+  - 이장래, 2017
+- Head First Design Patterns
+  - Eric Freeman 외 3명, 2004

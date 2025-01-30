@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+
+   fleetman-webapp:
+      image: virtualpairprogrammers/fleetman-production
+      networks:
+         - fleetman-network
+      ports:
+         - 80:8080
+      depends_on: 
+         - database
+
+   database:
+      image: mysql:5
+      networks:
+         - fleetman-network
+      environment:
+         - MYSQL_ROOT_PASSWORD=password
+         - MYSQL_DATABASE=fleetman
+
+networks:
+   fleetman-network:

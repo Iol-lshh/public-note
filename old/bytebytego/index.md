@@ -1,0 +1,352 @@
+- [go back readme](old/bytebytego/readme.md)
+---
+- [index](#index)
+    - [10_data_structures_used_in_daily_life](#10_data_structures_used_in_daily_life)
+    - [10_good_coding_principles](#10_good_coding_principles)
+    - [12_tips_for_api_security](#12_tips_for_api_security)
+    - [3_use_cases_for_event_sourcing](#3_use_cases_for_event_sourcing)
+    - [8_data_structures_that_power_your_databases](#8_data_structures_that_power_your_databases)
+    - [8_popular_network_protocols](#8_popular_network_protocols)
+    - [9_must_know_website_performance_metrics](#9_must_know_website_performance_metrics)
+    - [accounting_101_in_payments](#accounting_101_in_payments)
+    - [airbnb_microservice_architecture](#airbnb_microservice_architecture)
+    - [algorithms_you_should_know_before_system_design_interviews](#algorithms_you_should_know_before_system_design_interviews)
+    - [api_architextural_styles_comparison](#api_architextural_styles_comparison)
+    - [api_vs_sdk](#api_vs_sdk)
+    - [apple_pay_and_google_pay_security](#apple_pay_and_google_pay_security)
+    - [big_endian_vs_little_endian](#big_endian_vs_little_endian)
+    - [caching_strategies_and_how_to_choose_the_right_one](#caching_strategies_and_how_to_choose_the_right_one)
+    - [cap_theorem](#cap_theorem)
+    - [cicd_pipelines](#cicd_pipelines)
+    - [code_first_vs_api_first_development](#code_first_vs_api_first_development)
+    - [data_pipeline_overview](#data_pipeline_overview)
+    - [db_sharding](#db_sharding)
+    - [design_a_live_streaming_system](#design_a_live_streaming_system)
+    - [design_effective_and_safe_apis](#design_effective_and_safe_apis)
+    - [devops_vs_sre_vs_platform_engineering](#devops_vs_sre_vs_platform_engineering)
+    - [diagram_as_code](#diagram_as_code)
+    - [differences_in_event_sourcing_system_design](#differences_in_event_sourcing_system_design)
+    - [energy_language_uses](#energy_language_uses)
+    - [evolution_of_an_api_architecture](#evolution_of_an_api_architecture)
+    - [evolution_of_uber_api_layer](#evolution_of_uber_api_layer)
+    - [fixing_bugs_automatically](#fixing_bugs_automatically)
+    - [forward_proxy_vs_reverse_proxy](#forward_proxy_vs_reverse_proxy)
+    - [git_merge_vs_git_rebase](#git_merge_vs_git_rebase)
+    - [gitops_workflow](#gitops_workflow)
+    - [how_caches_can_go_wrong](#how_caches_can_go_wrong)
+    - [how_companies_ship_code_to_production](#how_companies_ship_code_to_production)
+    - [how_did_we_get_to_http3](#how_did_we_get_to_http3)
+    - [how_do_cpp_java_python_work](#how_do_cpp_java_python_work)
+    - [how_do_message_queues_evolve](#how_do_message_queues_evolve)
+    - [how_do_search_engines_work](#how_do_search_engines_work)
+    - [how_do_we_adopt_cloud_native](#how_do_we_adopt_cloud_native)
+    - [how_does_disney_hotstar_capture_5_billion_emogis_during_a_tournament](#how_does_disney_hotstar_capture_5_billion_emogis_during_a_tournament)
+    - [how_does_docker_work](#how_does_docker_work)
+    - [how_does_git_work](#how_does_git_work)
+    - [how_does_google_authenticator_work](#how_does_google_authenticator_work)
+    - [how_does_grpc_work](#how_does_grpc_work)
+    - [how_does_https_work](#how_does_https_work)
+    - [how_does_scan_to_pay_work](#how_does_scan_to_pay_work)
+    - [how_does_sso_work](#how_does_sso_work)
+    - [how_git_commands_work](#how_git_commands_work)
+    - [how_https_works](#how_https_works)
+    - [how_is_sql_executed_in_db](#how_is_sql_executed_in_db)
+    - [how_to_deploy_services](#how_to_deploy_services)
+    - [how_to_design_secure_web_api](#how_to_design_secure_web_api)
+    - [http_status_codes](#http_status_codes)
+    - [java_hierachy](#java_hierachy)
+    - [key_terms_in_domain_ddd](#key_terms_in_domain_ddd)
+    - [latency_numbers_you_shoud_know](#latency_numbers_you_shoud_know)
+    - [linux_file_permissions](#linux_file_permissions)
+    - [linux_file_systems](#linux_file_systems)
+    - [linux_performance_observability_tools](#linux_performance_observability_tools)
+    - [load_balancer_vs_api_gateway](#load_balancer_vs_api_gateway)
+    - [load_balancing_algorithms](#load_balancing_algorithms)
+    - [logging_tracing_metrics](#logging_tracing_metrics)
+    - [microservice_best_practices](#microservice_best_practices)
+    - [microservice_tech_stack](#microservice_tech_stack)
+    - [monitoring_cheat_sheet](#monitoring_cheat_sheet)
+    - [mvc_mvp_mvvm_viper_patterns](#mvc_mvp_mvvm_viper_patterns)
+    - [netflix_overall_architecture](#netflix_overall_architecture)
+    - [netflix_tech_stack](#netflix_tech_stack)
+    - [notification_process](#notification_process)
+    - [oauth2.0_flows](#oauth2.0_flows)
+    - [program_vs_process_vs_thread](#program_vs_process_vs_thread)
+    - [protocol_how_does_it_work](#protocol_how_does_it_work)
+    - [rest_api_authentication_methods](#rest_api_authentication_methods)
+    - [rest_api_design](#rest_api_design)
+    - [rest_vs_graphql](#rest_vs_graphql)
+    - [reverse_proxy_vs_api_gateway_vs_load_balancer](#reverse_proxy_vs_api_gateway_vs_load_balancer)
+    - [session_jwt_token_sso_oauth2](#session_jwt_token_sso_oauth2)
+    - [short_long_polling_sse_websocket](#short_long_polling_sse_websocket)
+    - [software_architecture_styles](#software_architecture_styles)
+    - [sql_query_execution_order](#sql_query_execution_order)
+    - [sql_vs_nosql](#sql_vs_nosql)
+    - [stack_overflow_architecture](#stack_overflow_architecture)
+    - [system_design_acronyms](#system_design_acronyms)
+    - [system_design_blueprint_the_ultimate_guide](#system_design_blueprint_the_ultimate_guide)
+    - [system_design_cheat_sheet](#system_design_cheat_sheet)
+    - [test_process](#test_process)
+    - [testing](#testing)
+    - [top4_most_used_authentication_mechanisms](#top4_most_used_authentication_mechanisms)
+    - [top4_udp_use_cases](#top4_udp_use_cases)
+    - [top5_caching_strategies](#top5_caching_strategies)
+    - [top5_kafka_use_cases](#top5_kafka_use_cases)
+    - [top6_data_management_patterns](#top6_data_management_patterns)
+    - [top6_database_models](#top6_database_models)
+    - [top6_heartbeat_detection_mechanisms](#top6_heartbeat_detection_mechanisms)
+    - [top6_load_balancer_use_cases](#top6_load_balancer_use_cases)
+    - [top9_http_request_methods](#top9_http_request_methods)
+    - [top_caching_strategies](#top_caching_strategies)
+    - [troubleshooting_kubernetes_deployments_by_learnk8s](#troubleshooting_kubernetes_deployments_by_learnk8s)
+    - [types_of_databases](#types_of_databases)
+    - [types_of_databases_with_use_cases](#types_of_databases_with_use_cases)
+    - [types_of_memory_and_storage](#types_of_memory_and_storage)
+    - [types_of_vpns](#types_of_vpns)
+    - [typical_aws_network_architecture](#typical_aws_network_architecture)
+    - [url_uri_urn](#url_uri_urn)
+    - [what_does_acid_mean](#what_does_acid_mean)
+    - [what_does_api_gateway_do](#what_does_api_gateway_do)
+    - [what_happens_when_you_type_a_url_into_a_browser](#what_happens_when_you_type_a_url_into_a_browser)
+    - [what_is_a_webhook](#what_is_a_webhook)
+    - [what_is_k8s](#what_is_k8s)
+    - [what_is_oauth](#what_is_oauth)
+    - [what_is_osi_model](#what_is_osi_model)
+    - [where_do_we_cache_data](#where_do_we_cache_data)
+    - [why_is_kafka_fast](#why_is_kafka_fast)
+    - [why_is_redis_so_fast](#why_is_redis_so_fast)
+
+
+
+---
+# index
+### 10_data_structures_used_in_daily_life
+- ![10_data_structures_used_in_daily_life](10_data_structures_used_in_daily_life.jpg)
+### 10_good_coding_principles
+- ![10_good_coding_principles](10_good_coding_principles.gif)
+### 12_tips_for_api_security
+- ![12_tips_for_api_security](12_tips_for_api_security.gif)
+### 3_use_cases_for_event_sourcing
+- ![3_use_cases_for_event_sourcing](3_use_cases_for_event_sourcing.jpg)
+### 8_data_structures_that_power_your_databases
+- ![8_data_structures_that_power_your_databases](8_data_structures_that_power_your_databases.jpg)
+### 8_popular_network_protocols
+- ![8_popular_network_protocols](8_popular_network_protocols.gif)
+### 9_must_know_website_performance_metrics
+- ![9_must_know_website_performance_metrics](9_must_know_website_performance_metrics.gif)
+### accounting_101_in_payments
+- ![accounting_101_in_payments](accounting_101_in_payments.jpg)
+### airbnb_microservice_architecture
+- ![airbnb_microservice_architecture](airbnb_microservice_architecture.jpg)
+### algorithms_you_should_know_before_system_design_interviews
+- ![algorithms_you_should_know_before_system_design_interviews](algorithms_you_should_know_before_system_design_interviews.jpg)
+### api_architextural_styles_comparison
+- ![api_architextural_styles_comparison](api_architextural_styles_comparison.jpg)
+### api_vs_sdk
+- ![api_vs_sdk](api_vs_sdk.gif)
+### apple_pay_and_google_pay_security
+- ![apple_pay_and_google_pay_security](apple_pay_and_google_pay_security.jpg)
+### big_endian_vs_little_endian
+- ![big_endian_vs_little_endian](big_endian_vs_little_endian.jpg)
+### caching_strategies_and_how_to_choose_the_right_one
+- ![cache_systems_every_developer_should_know](cache_systems_every_developer_should_know.jpg)
+### cap_theorem
+- ![cap_theorem](cap_theorem.jpg)
+### cicd_pipelines
+- ![cicd_pipelines](cicd_pipelines.jpg)
+### code_first_vs_api_first_development
+- ![code_first_vs_api_first_development](code_first_vs_api_first_development.jpg)
+### data_pipeline_overview
+- ![data_pipeline_overview](data_pipeline_overview.gif)
+### db_sharding
+- ![db_sharding](db_sharding.jpg)
+### design_a_live_streaming_system
+- ![design_a_live_streaming_system](design_a_live_streaming_system.jpg)
+### design_effective_and_safe_apis
+- ![design_effective_and_safe_apis](design_effective_and_safe_apis.jpg)
+### devops_vs_sre_vs_platform_engineering
+- ![devops_vs_sre_vs_platform_engineering](devops_vs_sre_vs_platform_engineering.jpg)
+### diagram_as_code
+- ![diagram_as_code](diagram_as_code.jpg)
+### differences_in_event_sourcing_system_design
+- ![differences_in_event_sourcing_system_design](differences_in_event_sourcing_system_design.jpg)
+### energy_language_uses
+- ![energy_language_uses](energy_language_uses.jpg)
+### evolution_of_an_api_architecture
+- ![evolution_of_an_api_architecture](evolution_of_an_api_architecture.jpg)
+### evolution_of_uber_api_layer
+- ![evolution_of_uber_api_layer](evolution_of_uber_api_layer.jpg)
+### fixing_bugs_automatically
+- ![fixing_bugs_automatically](fixing_bugs_automatically.gif)
+### forward_proxy_vs_reverse_proxy
+- ![forward_proxy_vs_reverse_proxy](forward_proxy_vs_reverse_proxy.jpg)
+### git_merge_vs_git_rebase
+- ![git_merge_vs_git_rebase](git_merge_vs_git_rebase.jpg)
+### gitops_workflow
+- ![gitops_workflow](gitops_workflow.gif)
+### how_caches_can_go_wrong
+- ![how_caches_can_go_wrong](how_caches_can_go_wrong.gif)
+### how_companies_ship_code_to_production
+- ![how_companies_ship_code_to_production](how_companies_ship_code_to_production.gif)
+### how_did_we_get_to_http3
+- ![how_did_we_get_to_http3](how_did_we_get_to_http3.jpg)
+### how_do_cpp_java_python_work
+- ![how_do_cpp_java_python_work](how_do_cpp_java_python_work.gif)
+### how_do_message_queues_evolve
+- ![how_do_message_queues_evolve](how_do_message_queues_evolve.gif)
+### how_do_search_engines_work
+- ![how_do_search_engines_work](how_do_search_engines_work.gif)
+### how_do_we_adopt_cloud_native
+- ![how_do_we_adopt_cloud_native](how_do_we_adopt_cloud_native.gif)
+### how_does_disney_hotstar_capture_5_billion_emogis_during_a_tournament
+- ![how_does_disney_hotstar_capture_5_billion_emogis_during_a_tournament](how_does_disney_hotstar_capture_5_billion_emogis_during_a_tournament.jpg)
+### how_does_docker_work
+- ![how_does_docker_work](how_does_docker_work.gif)
+### how_does_git_work
+- ![how_does_git_work](how_does_git_work.jpg)
+### how_does_google_authenticator_work
+- ![how_does_google_authenticator_work](how_does_google_authenticator_work.jpg)
+### how_does_grpc_work
+- ![how_does_grpc_work](how_does_grpc_work.jpg)
+### how_does_https_work
+- ![how_does_https_work](how_does_https_work.jpg)
+### how_does_scan_to_pay_work
+- ![how_does_scan_to_pay_work](how_does_scan_to_pay_work.jpg)
+### how_does_sso_work
+- ![how_does_sso_work](how_does_sso_work.jpg)
+### how_git_commands_work
+- ![how_git_commands_work](how_git_commands_work.jpg)
+### how_https_works
+- ![how_https_works](how_https_works.jpg)
+### how_is_sql_executed_in_db
+- ![how_is_sql_executed_in_db](how_is_sql_executed_in_db.jpg)
+### how_to_deploy_services
+- ![how_to_deploy_services](how_to_deploy_services.jpg)
+### how_to_design_secure_web_api
+- ![how_to_design_secure_web_api](how_to_design_secure_web_api.jpg)
+### http_status_codes
+- ![http_status_codes](http_status_codes.jpg)
+### java_hierachy
+- ![java_hierachy](java_hierachy.jpg)
+### key_terms_in_domain_ddd
+- ![key_terms_in_domain_ddd](key_terms_in_domain_ddd.jpg)
+### latency_numbers_you_shoud_know
+- ![latency_numbers_you_shoud_know](latency_numbers_you_shoud_know.jpg)
+### linux_file_permissions
+- ![linux_file_permissions](linux_file_permissions.jpg)
+### linux_file_systems
+- ![linux_file_systems](linux_file_systems.gif)
+### linux_performance_observability_tools
+- ![linux_performance_observability_tools](linux_performance_observability_tools.jpg)
+### load_balancer_vs_api_gateway
+- ![load_balancer_vs_api_gateway](load_balancer_vs_api_gateway.jpg)
+### load_balancing_algorithms
+- ![load_balancing_algorithms](load_balancing_algorithms.jpg)
+### logging_tracing_metrics
+- ![logging_tracing_metrics](logging_tracing_metrics.gif)
+### microservice_best_practices
+- ![microservice_best_practices](microservice_best_practices.jpg)
+### microservice_tech_stack
+- ![microservice_tech_stack](microservice_tech_stack.jpg)
+### monitoring_cheat_sheet
+- ![monitoring_cheat_sheet](monitoring_cheat_sheet.jpg)
+### mvc_mvp_mvvm_viper_patterns
+- ![mvc_mvp_mvvm_viper_patterns](mvc_mvp_mvvm_viper_patterns.jpg)
+### netflix_overall_architecture
+- ![netflix_overall_architecture](netflix_overall_architecture.jpg)
+### netflix_tech_stack
+- ![netflix_tech_stack](netflix_tech_stack.jpg)
+### notification_process
+- ![notification_process](notification_process.jpg)
+### oauth2.0_flows
+- ![oauth2.0_flows](oauth2.0_flows.jpg)
+### program_vs_process_vs_thread
+- ![program_vs_process_vs_thread](program_vs_process_vs_thread.jpg)
+### protocol_how_does_it_work
+- ![protocol_how_does_it_work](protocol_how_does_it_work.jpg)
+### rest_api_authentication_methods
+- ![rest_api_authentication_methods](rest_api_authentication_methods.gif)
+### rest_api_design
+- ![rest_api_design](rest_api_design.jpg)
+### rest_vs_graphql
+- ![rest_vs_graphql](rest_vs_graphql.gif)
+### reverse_proxy_vs_api_gateway_vs_load_balancer
+- ![reverse_proxy_vs_api_gateway_vs_load_balancer](reverse_proxy_vs_api_gateway_vs_load_balancer.jpg)
+### session_jwt_token_sso_oauth2
+- ![session_jwt_token_sso_oauth2](session_jwt_token_sso_oauth2.0.gif)
+### short_long_polling_sse_websocket
+- ![short_long_polling_sse_websocket](short_long_polling_sse_websocket.jpg)
+### software_architecture_styles
+- ![software_architecture_styles](software_architecture_styles.jpg)
+### sql_query_execution_order
+- ![sql_query_execution_order](sql_query_execution_order.jpg)
+### sql_vs_nosql
+- ![sql_vs_nosql](sql_vs_nosql.jpg)
+### stack_overflow_architecture
+- ![stack_overflow_architecture](stack_overflow_architecture.jpg)
+### system_design_acronyms
+- ![system_design_acronyms](system_design_acronyms.gif)
+### system_design_blueprint_the_ultimate_guide
+- ![system_design_blueprint_the_ultimate_guide](system_design_blueprint_the_ultimate_guide.jpg)
+### system_design_cheat_sheet
+- ![system_design_cheat_sheet](system_design_cheat_sheet.gif)
+### test_process
+- ![test_process](test_process.jpg)
+### testing
+- ![testing](testing.jpg)
+### top4_most_used_authentication_mechanisms
+- ![top4_most_used_authentication_mechanisms](top4_most_used_authentication_mechanisms.jpg)
+### top4_udp_use_cases
+- ![top4_udp_use_cases](top4_udp_use_cases.jpg)
+### top5_caching_strategies
+- ![top5_caching_strategies](top5_caching_strategies.jpg)
+### top5_kafka_use_cases
+- ![top5_kafka_use_cases](top5_kafka_use_cases.gif)
+### top6_data_management_patterns
+- ![top6_data_management_patterns](top6_data_management_patterns.gif)
+### top6_database_models
+- ![top6_database_models](top6_database_models.gif)
+### top6_heartbeat_detection_mechanisms
+- ![top6_heartbeat_detection_mechanisms](top6_heartbeat_detection_mechanisms.gif)
+### top6_load_balancer_use_cases
+- ![top6_load_balancer_use_cases](top6_load_balancer_use_cases.jpg)
+### top9_http_request_methods
+- ![top9_http_request_methods](top9_http_request_methods.gif)
+### top_caching_strategies
+- ![top_caching_strategies](top_caching_strategies.jpg)
+### troubleshooting_kubernetes_deployments_by_learnk8s
+- ![troubleshooting_kubernetes_deployments_by_learnk8s](troubleshooting_kubernetes_deployments_by_learnk8s.jpg)
+### types_of_databases
+- ![types_of_databases](types_of_databases.jpg)
+### types_of_databases_with_use_cases
+- ![types_of_databases_with_use_cases](types_of_databases_with_use_cases.jpg)
+### types_of_memory_and_storage
+- ![types_of_memory_and_storage](types_of_memory_and_storage.jpg)
+### types_of_vpns
+- ![types_of_vpns](types_of_vpns.jpg)
+### typical_aws_network_architecture
+- ![typical_aws_network_architecture](typical_aws_network_architecture.gif)
+### url_uri_urn
+- ![url_uri_urn](url_uri_urn.jpg)
+### what_does_acid_mean
+- ![what_does_acid_mean](what_does_acid_mean.gif)
+### what_does_api_gateway_do
+- ![what_does_api_gateway_do](what_does_api_gateway_do.jpg)
+### what_happens_when_you_type_a_url_into_a_browser
+- ![what_happens_when_you_type_a_url_into_a_browser](what_happens_when_you_type_a_url_into_a_browser.gif)
+### what_is_a_webhook
+- ![what_is_a_webhook](what_is_a_webhook.jpg)
+### what_is_k8s
+- ![what_is_k8s](what_is_k8s.jpg)
+### what_is_oauth
+- ![what_is_oauth](what_is_oauth.jpg)
+### what_is_osi_model
+- ![what_is_osi_model](what_is_osi_model.gif)
+### where_do_we_cache_data
+- ![where_do_we_cache_data](where_do_we_cache_data.jpg)
+### why_is_kafka_fast
+- ![why_is_kafka_fast](why_is_kafka_fast.jpg)
+### why_is_redis_so_fast
+- ![why_is_redis_so_fast](why_is_redis_so_fast.jpg)
+
+
