@@ -1,9 +1,16 @@
+### default ###
 .obsidian
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**/build/
 !**/src/test/**/build/
+public
+.cache
+node_modules
+package-lock.json
+*DS_Store
+*.env
 
 ### IntelliJ IDEA ###
 .idea/
