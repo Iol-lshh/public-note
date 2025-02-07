@@ -1,4 +1,9 @@
-# 1. JVM
+---
+title: 1. Java 환경
+date: 2025-01-04
+description: JVM
+category: java > basic java
+---
 
 ## 1.1. JDK 구성 요소
 
@@ -83,7 +88,7 @@
   - Java의 "한 번 작성하면, 어디서든 실행" 철학의 핵심으로, 바이트코드를 해석하고 실행
   - Java 애플리케이션을 실행하는 핵심 역할을 수행하며, JRE의 일부
 
-![jvm](img/IMG_1264.webp)
+![jvm](./img/IMG_1264.webp)
 
 ---
 

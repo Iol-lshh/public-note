@@ -1,4 +1,9 @@
-# 4. 스프링 핵심 동작 원리
+---
+title: 4. SpringBoot
+date: 2025-01-07
+description: 스프링 핵심 동작 원리
+category: java > basic java
+---
 
 - 스프링(SPRING)은 자바(Java) 기반의 엔터프라이즈 애플리케이션 개발을 단순화하고 유연하게 만들기 위해 등장한 **프레임워크**입니다.  
 - 기존 JEE(J2EE)가 가진 복잡한 설정 문제를 해결하기 위해 **의존성 주입(Dependency Injection, DI)**, **제어의 역전(Inversion of Control, IoC)** 등을 도입하면서, 모듈 간 결합도를 낮추고 유지보수성을 높였습니다.
@@ -27,7 +32,7 @@
   2. **Setter 주입**: 공용 Setter 메서드를 통해 의존성을 설정합니다.
   3. **필드 주입**: 리플렉션을 사용한 직접 주입(권장되지 않음).
 
-![](img/Pasted%20image%2020250119170652.png)
+![](img/dip_ioc.png)
 
 ### 4.1.4 컨테이너 구현
 

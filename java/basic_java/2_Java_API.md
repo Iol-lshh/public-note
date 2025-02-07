@@ -1,4 +1,9 @@
-# 2. 자바 데이터 타입과 객체지향 설계 원칙
+---
+title: 2. Java API
+date: 2025-01-05
+description: 자바 데이터 타입과 객체지향 설계 원칙
+category: java > basic java
+---
 
 ## 2.1. 타입
 
@@ -98,7 +103,7 @@ System.out.println(result); // 0.30000000000000004
 - **언박싱(Unboxing)**: 래퍼 클래스를 다시 기본 타입으로 변환하는 과정.
 - 객체의 유연성이 필요한 경우가 아니라면, 성능을 위해 기본 타입을 사용하는 것이 권장됩니다.
 
-![boxing](img/IMG_1267.webp)
+![boxing](./img/IMG_1267.webp)
 
 - 박싱시, 캐싱에 주의하세요
 
@@ -462,7 +467,7 @@ public class OverridingExample {
 3. 상속
 4. 다형성
 
-![oop](img/IMG_1262.gif)
+![oop](./img/IMG_1262.gif)
 
 #### 2.4.1.1.  **추상화 (Abstraction)**
 
@@ -552,7 +557,7 @@ public class Main {
   4. Interface Segregation
   5. Dependency Inversion
 
-![solid](img/IMG_1258.jpeg)
+![solid](./img/IMG_1258.jpeg)
 
 #### 2.4.2.1. 단일 책임 원칙 (Single Responsibility Principle, SRP)
 

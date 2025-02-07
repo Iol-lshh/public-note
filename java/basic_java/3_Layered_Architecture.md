@@ -1,4 +1,9 @@
-# 3. 엔터프라이즈 애플리케이션 아키텍처의 기본 개념
+---
+title: 3. Layered Architecture
+date: 2025-01-06
+description: 엔터프라이즈 애플리케이션 아키텍처의 기본 개념
+category: java > basic java
+---
 
 - **Martin Fowler의 "엔터프라이즈 애플리케이션 아키텍처 패턴"**에 따르면, 소프트웨어는 계층화된 구조를 통해 복잡성을 관리합니다.  
 - **상위 계층**은 하위 계층의 서비스를 활용하지만, **하위 계층**은 상위 계층을 인식하지 않습니다.
@@ -45,9 +50,9 @@ public class ProductService {
    - 데이터베이스와 상호작용하며 데이터를 저장하고 관리합니다.
    - Java의 경우, JPA 또는 Plain Query를 처리하는 레이어의 구현
 
-![](img/Pasted%20image%2020250119153812.png)
+![](img/세가지주요계층.png)
 
-![](img/Pasted%20image%2020250119160116.png)
+![](./img/Pasted%20image%2020250119160116.png)
 
 ---
 
@@ -59,7 +64,7 @@ public class ProductService {
   - **Controller**: 흐름 제어 및 검증 역할.  
   - **View**: 사용자에게 출력 데이터를 표시.
 
-![](img/Pasted%20image%2020250119161740.png)
+![](img/mvc2.png)
 
 ### 3.2.2. 3계층 아키텍처  
 - 애플리케이션 전체의 코드 구조를 계층화하여 확장성과 유지보수성을 높이는 것을 목표로 합니다.
@@ -73,7 +78,7 @@ public class ProductService {
 - **장점**: 단순하며 데이터 원본 계층과의 연동이 용이.  
 - **단점**: 코드 중복 및 복잡성 증가 가능성.
 
-![](img/Pasted%20image%2020250119155102.png)
+![](img/트랜잭션스크립트.png)
 
 ---
 
@@ -82,7 +87,7 @@ public class ProductService {
 - **장점**: 복잡한 비즈니스 로직 처리에 적합.  
 - **단점**: 객체 간의 상호작용 이해 및 설계 초기 비용이 높음.
 
-![](img/스크린샷%202025-01-19%2015.51.17.png)
+![](img/도메인모델.png)
 
 ---
 
@@ -92,9 +97,9 @@ public class ProductService {
     - 도메인 모델은 각 계약마다 객체를 생성.  
     - 테이블 모듈은 인스턴스를 하나만 사용.
 
-![](img/Pasted%20image%2020250119155435.png)
+![](img/테이블모듈.png)
 
-![](img/Pasted%20image%2020250119155605.png)
+![](img/도메인논리복잡도그래프.png)
 
 ---
 
@@ -106,4 +111,4 @@ public class ProductService {
 ### 3.4.2. 헥사고날 아키텍처  
 - 도메인 중심 설계와 유사하며, 애플리케이션의 입력/출력을 명확히 정의.
 
-![layered](img/IMG_1257.jpeg)
+![layered](./img/IMG_1257.jpeg)

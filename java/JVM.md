@@ -1,5 +1,9 @@
-
-# Java의 핵심 구성 요소: JDK, JRE, JVM
+---
+title: JVM
+date: 2025-01-14
+description: "Java의 핵심 구성 요소: JDK, JRE, JVM"
+category: "java"
+---
 
 - Java는 모바일 애플리케이션부터 대규모 엔터프라이즈 시스템까지 다양한 영역에서 사용되는 세계적으로 널리 쓰이는 프로그래밍 언어입니다. 그러나 Java 프로그램을 작성하고 실행하며 동작시키기 위해서는 Java 생태계의 세 가지 핵심 구성 요소인 **JDK(Java Development Kit)**, **JRE(Java Runtime Environment)**, **JVM(Java Virtual Machine)** 를 이해하는 것이 중요합니다.  
 
@@ -44,7 +48,7 @@
 2. Java 컴파일러(`javac`)를 통해 소스 파일을 바이트코드(`.class`)로 컴파일합니다.
 3. JVM이 바이트코드를 해석하여 네이티브 기계어로 변환하고, 실행합니다.
 
-![jvm](img/IMG_1260.gif)
+![jvm](./img/IMG_1260.gif)
 
 ---
 
@@ -157,9 +161,9 @@ output: Hello, World!
 - `.java` 파일을 컴파일하여 생성된 바이트코드(`.class` 파일)를 기계어로 변환하는 역할을 담당합니다.
 - JVM은 **Java Runtime Environment (JRE)**의 일부입니다.
 
-![jvm](img/IMG_1249.png)
+![jvm](./img/IMG_1249.png)
 
-![jvm](img/IMG_1254.jpeg)
+![jvm](./img/IMG_1254.jpeg)
 
 ### WORA (Write Once Run Anywhere)
 
@@ -176,7 +180,7 @@ output: Hello, World!
     2. **런타임 데이터 영역 (Runtime Data Area, 메모리 영역)**
     3. **실행 엔진 (Execution Engine)**
 
-![jvm](img/IMG_1250.png)
+![jvm](./img/IMG_1250.png)
 
 ---
 
@@ -188,7 +192,7 @@ output: Hello, World!
   2. 연결 (Linking)
   3. 초기화 (Initialization)
 
-![jvm](img/IMG_1251.png)
+![jvm](./img/IMG_1251.png)
 
 ### 1.1 로딩 (Loading)
 
@@ -206,7 +210,7 @@ output: Hello, World!
   2. 부모 클래스 로더에 요청을 위임합니다.
   3. 클래스를 찾을 수 없으면 `findClass()`를 호출하여 파일 시스템에서 클래스를 찾습니다.
 
-![jvm](img/IMG_1252.png)
+![jvm](./img/IMG_1252.png)
 
 - **위임 예제**:
   - `Student.class`를 로드하려는 요청은 애플리케이션 클래스 로더(Application ClassLoader)에서 시작됩니다.
@@ -307,7 +311,7 @@ output: Hello, World!
 
 - 실행 엔진은 각 클래스에 있는 코드를 실행합니다. 그러나 프로그램을 실행하기 전에 바이트코드를 기계어 명령어로 변환해야 합니다. JVM은 실행 엔진에서 **인터프리터(Interpreter)** 또는 **JIT 컴파일러**를 사용할 수 있습니다.
 
-![jvm](img/IMG_1253.png)
+![jvm](./img/IMG_1253.png)
 
 ---
 

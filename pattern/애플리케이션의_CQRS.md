@@ -1,4 +1,9 @@
-## 유스 케이스
+---
+title: 애플리케이션의 CQRS
+date: 2025-01-28
+description: 애플리케이션의 CQRS 유스케이스 정리
+category: pattern
+---
 
 유스 케이스는 애플리케이션의 기능을 나타냅니다:
 
@@ -16,4 +21,4 @@
 - **Query** → UI에 필요한 데이터 표현 반환  (트랜잭션 스크립트)
 
 
-![](img/IMG_1391.jpeg)
+![](./img/IMG_1391.jpeg)

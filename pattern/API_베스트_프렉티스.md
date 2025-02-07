@@ -1,6 +1,11 @@
-# 경험 많은 개발자가 숙지해야 할 10가지 REST API 핵심 개념
+---
+title: API 베스트 프렉티스
+date: 2025-01-27
+description: 경험 많은 개발자가 숙지해야 할 10가지 REST API 핵심 개념
+category: pattern
+---
 
-![](img/IMG_1381.jpeg)
+![](./img/IMG_1381.jpeg)
 
 ## 1. 리소스 상태 전이 메커니즘
 - 진정한 무상태성은 각 요청이 완전한 컨텍스트를 포함해야 함.
