@@ -2,7 +2,7 @@
 title: 1. Java 환경
 date: 2025-01-04
 description: JVM
-category: java > basic java
+category: ["java > basic java"]
 ---
 
 ## 1.1. JDK 구성 요소

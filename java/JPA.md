@@ -2,7 +2,7 @@
 title: JPA
 date: 2025-01-13
 description: JPA 정리
-category: "java"
+category: ["java"]
 ---
 
 1. JDBC vs JPA
