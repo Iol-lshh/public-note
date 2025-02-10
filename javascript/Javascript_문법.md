@@ -568,10 +568,6 @@ async function printFiles() {
 }
 ```
 
-- 참조
-- [stackoverflow: Using async/await with a forEach loop](stackoverflow.com/questions/37576685/using-async-await-with-a-foreach-loop)
-- [Handling Nested Promises Using Async/Await in React](www.pluralsight.com/guides/handling-nested-promises-using-asyncawait-in-react)
-
 ### 6.4 쓰로틀링과 디바운스 처리
 
 #### 6.4.1 디바운스(Debouncing)
