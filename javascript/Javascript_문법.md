@@ -91,7 +91,6 @@ for (let idx in fooArr) {
 
 - 모든 객체는 불변성 유지를 지향한다.
 - 원본 데이터의 객체는, 다시 새 데이터를 입력받아서만 수정한다.
-  - [5.4 axios 사용하기 참조](./doc_Vue_Style_Guide.md/#54-axios)
 
 ### 2.1 배열
 
