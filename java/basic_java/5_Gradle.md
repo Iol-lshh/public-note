@@ -4,7 +4,7 @@ date: 2025-01-13
 description: Gradle
 category:
   - java
-  - basic
+  - basic_java
 ---
 
 - 패키지 관리자

@@ -4,7 +4,7 @@ date: 2025-01-07
 description: 스프링 핵심 동작 원리
 category:
   - java
-  - basic
+  - basic_java
 ---
 
 - 스프링(SPRING)은 자바(Java) 기반의 엔터프라이즈 애플리케이션 개발을 단순화하고 유연하게 만들기 위해 등장한 **프레임워크**입니다.  

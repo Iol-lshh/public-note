@@ -4,7 +4,7 @@ date: 2025-01-06
 description: 엔터프라이즈 애플리케이션 아키텍처의 기본 개념
 category:
   - java
-  - basic
+  - basic_java
 ---
 
 - **Martin Fowler의 "엔터프라이즈 애플리케이션 아키텍처 패턴"**에 따르면, 소프트웨어는 계층화된 구조를 통해 복잡성을 관리합니다.  

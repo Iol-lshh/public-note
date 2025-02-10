@@ -4,7 +4,6 @@ date: 2023-03-02
 description: JavaScript 문법 정리
 category:
   - javascript
-  - basic
 ---
 
 - [1. 변수](#1-변수)

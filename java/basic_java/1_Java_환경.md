@@ -4,7 +4,7 @@ date: 2025-01-04
 description: JVM
 category:
   - java
-  - basic
+  - basic_java
 ---
 
 ## 1.1. JDK 구성 요소
