@@ -4,7 +4,7 @@ date: 2023-12-20
 description: MSA가 무엇인지 맛보기 정리
 category:
   - pattern
-  - microservices
+  - microservices_pattern
 ---
 ## 목차
 
