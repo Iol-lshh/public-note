@@ -47,7 +47,7 @@ category:
 
 # MSA란?
 
-- Micro Service Architecture
+- Micro Services Architecture
 
 ## Service란?
 
