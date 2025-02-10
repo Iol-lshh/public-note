@@ -87,7 +87,9 @@ category:
   - 그래서 분리하기로 했다.
 
 - 이를 **SOA**(Service Oriented Architecture: 서비스 지향 아키텍처)라고 한다.
-![SOA](./image/soa.jpeg)
+
+![SOA](./img/soa.jpeg)
+
 - 이 아키텍처에는 아주 큰 문제가 있었는데, 서비스들이 많아짐에 따라, 관리 포인트가 기하급수적으로 증가한다.
 
 - 이때 혜성처럼 등장한 것이, Netplix에서 Spring을 기반으로 만든, **Netflix OSS**(Open Source Software)이다.
@@ -102,7 +104,7 @@ category:
   - MSA란 **잘 정의된 비즈니스 기능을 제공하는 서비스들의 아키텍처**이며,
   - **서비스가 서비스 간 통신 및 구성 로직을 관리하게 된다**.
 
-![MSA](./image/msa.jpeg)
+![MSA](./img/msa.jpeg)
 
 - MSA에서 서비스 설계시 가장 중요한 점 중 하나는
   - '**하나의 Service는 오직 한 가지 일에만 집중하고, 완벽하게 처리한다.**' 일 것이다.
@@ -146,7 +148,7 @@ category:
 - 서비스 레포지토리를 적용한다면, 서비스의 주소를 일일히 게이트웨이에 등록할 필요 없이, 서비스 이름만 등록해주면 찾아갈 수 있게 돕는다.
   - 즉, 운영자가 트래픽 이슈마다 출근하지 않아도, 설정만 잘 해놓으면, 서비스를 수평 확장할때 자동으로 서비스가 등록되고 알아서 로드밸런싱되어, 서비스가 원활하게 돌아갈 수 있게 해준다.
 
-![동기 통신과 서비스 레지스트리](./image/sync_msg.jpeg)
+![동기 통신과 서비스 레지스트리](./img/sync_msg.jpeg)
 
 ### 어떤 것들이 있을까?
 
@@ -170,7 +172,7 @@ category:
 
 ### 비동기 통신의 서비스 정의
 
-![비동기 통신과 서비스 레지스트리](./image/async_msg.jpeg)
+![비동기 통신과 서비스 레지스트리](./img/async_msg.jpeg)
 
 - 비동기 통신 또한 Service Registry를 사용하기도 한다.
   - 이때, 이곳에 메시징을 위한 스키마(서비스간 약속된 형식)를 등록하게 된다.
@@ -179,7 +181,7 @@ category:
 
 ### 서비스 연결성
 
-![연결성 패턴](./image/connectivity_pattern.jpeg)
+![연결성 패턴](./img/connectivity_pattern.jpeg)
 
 - 서비스는 개별 기능이나 도구 단위가 아닌, **비즈니스 기능** 단위로 정의한다.
 - 통신 방식을 분리한다.
@@ -191,7 +193,7 @@ category:
 - 수 많은 서비스들이 중간에 에러가 발생했을 때, 에러 전파 방지를 사람이 수동으로 처리하기란 난해하다.
   - 처리를 자동화할 필요가 있다. 다음은 처리 패턴들이다.
 
-![기본 탄력성 구조](./image/flex_connection.jpeg)
+![기본 탄력성 구조](./img/flex_connection.jpeg)
 
 - 타임아웃
   - 서비스를 호출하고 완료되기까지 일정 시간을 기다려서 페일시킨다
@@ -213,7 +215,7 @@ category:
 - 여러 마이크로서비스를 **한 곳**에서 시스템들을 통합하고 호출하는 비즈니스 로직을 구현
 - 연결된 모든 다른 서비스에 **강한 의존성**을 갖게 된다.
 
-![오케스트레이션 패턴](./image/orchestration.jpeg)
+![오케스트레이션 패턴](./img/orchestration.jpeg)
 
 #### 2. 코레오그래피 Choreography
 
@@ -222,19 +224,19 @@ category:
 - 직접적 연결이 아니어서, **느슨한 결합 구조**를 갖는다.
 - 딱 한번 전달 이라는, **신뢰성을 보장** 할 수 있다.
 
-![코레오그래피 패턴](./image/choreography.jpeg)
+![코레오그래피 패턴](./img/choreography.jpeg)
 
-![코레오그래피 예시](./image/choreography_messaging_infra.jpeg)
+![코레오그래피 예시](./img/choreography_messaging_infra.jpeg)
 
 ##### * 중재자 오케스트레이션 패턴 (책임을 중앙 집중화)
 
-![중재자를 중점으로 본 오케스트레이션 패턴](./image/mediator.jpeg)
+![중재자를 중점으로 본 오케스트레이션 패턴](./img/mediator.jpeg)
 
 ##### * 파이프라인 앤 필터 패턴 (책임을 각 마이크로 서비스에 분산)
 
 - 업무 분리에 유리하지만, 반드시 이벤트에 대한 팀 간의 적확한 조율이 필요하다.
 
-![파이프라인 앤 필터](./image/pipeline_and_filter.jpeg)
+![파이프라인 앤 필터](./img/pipeline_and_filter.jpeg)
 
 - 위 [서비스 연결성 예시](#서비스-연결성)와 같이, 두 가지 패턴을 혼합하여 사용한다.
 
@@ -242,7 +244,7 @@ category:
 
 - 사가 패턴은 오케스트레이션 패턴을 분산 트랜잭션을 목적으로 구현시킨 패턴이다.
 
-![사가 패턴](./image/saga.jpeg)
+![사가 패턴](./img/saga.jpeg)
 
 - 작업을 취소하는 **보상 작업**(compensating operation)을 페어로 구현해야 한다.
 - 이 조합 로직은 **사가 실행 관리자**(Saga Execution Coordinator)로 구현한다.
@@ -260,7 +262,8 @@ category:
   - 이 경우 SEC가 불필요하며, **메시지 브로커를 이용한 트랜잭션 작업**을 수행하게 된다.
     - 각 서비스가 메시지 브로커에서 트랜잭션의 상태를 읽고 자체적으로 보상 작업을 실행하도록 한다.
 - 다음은 모 여행사의 구현 예시이다.
-![사가 예시](./image/saga_example.jpeg)
+
+![사가 예시](./img/saga_example.jpeg)
 
 - 참조 교재에서는 사가 패턴은 밑바닥부터 만들기에는 너무 복잡하므로, 프레임워크나 솔루션을 사용할 것을 권장하고 있다.
   - Camunda, Apache Camel, Netflix Conductor, Uber Cadence 등의 프레임 워크와 워크플로 엔진
@@ -270,7 +273,7 @@ category:
 
 ## 클라우드 네이티브 앱의 데이터 아키텍처 추상화
 
-![클라우드 네이티브 앱 데이터 아키텍처](./image/data_architecture.jpeg)
+![클라우드 네이티브 앱 데이터 아키텍처](./img/data_architecture.jpeg)
 
 - 데이터 소스: 데이터의 입력이 이루어지는 곳
 
@@ -330,18 +333,16 @@ category:
 - 미리 구체화된 뷰로 캐싱하여, 데이터 조회를 효과적으로 처리할 수 있다.
 - 서비스의 ORM에 유리하다
 - 대상 데이터의 크기가 작거나, CPU를 많이 소모하는 복잡한 조인, 데이터 변환 같은 작업에 좋다.
-
-![구체화된 뷰](./image/materialized_view.jpeg)
-
+![](./img/materialized_view.jpeg)
 ### 데이터 지역성 패턴
 
 - 데이터 처리 로직을 최대한 데이터와 가까운곳에서 실행
   - 서비스와 데이터를 같은 위치에 배포하거나, 데이터 스토어에서 로직(**저장 프로시저**, PL/SQL)을 실행
   - 동일 노드에서 실행할 수 없다면, 최대한 같은 리전, 같은 데이터센터에 배치하여 네트워크 대역폭 소비를 최소화
 
-![데이터 지역성 패턴](./image/data_locality.jpeg)
+![데이터 지역성 패턴](./img/data_locality.jpeg)
 
-![데이터 지역성 - 프로시저](./image/prodecure.jpeg)
+![데이터 지역성 - 프로시저](./img/prodecure.jpeg)
 
 - 주의사항
   - 질의의 결과가 입력 데이터 크기와 거의 차이가 없는 경우, 이 패턴은 사용하지 않는 것이 좋다.
