@@ -14,6 +14,8 @@ tags:
   - lean
   - kanban
 ---
+![header](./img/header.webp)
+
 ## 애자일 (Agile)
 
 - 마음가짐과 경험이 중요하다!
