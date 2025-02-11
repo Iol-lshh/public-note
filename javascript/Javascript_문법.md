@@ -4,6 +4,9 @@ date: 2023-03-02
 description: JavaScript 문법 정리
 category:
   - javascript
+tags:
+  - javascript
+  - grammar
 ---
 
 - [1. 변수](#1-변수)

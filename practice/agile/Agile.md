@@ -4,6 +4,14 @@ date: 2025-02-11
 description: Agile을 구성하는 요소들.. Scrum, XP, Lean, Kanban 정리
 category:
   - book
+tags:
+  - agile
+  - practice
+  - scrum
+  - xp
+  - splint
+  - lean
+  - kanban
 ---
 ## 애자일 (Agile)
 

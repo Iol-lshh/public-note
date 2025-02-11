@@ -2,7 +2,11 @@
 title: 애플리케이션의 CQRS
 date: 2025-01-28
 description: 애플리케이션의 CQRS 유스케이스 정리
-category: ["pattern"]
+category:
+  - pattern
+tags:
+  - pattern
+  - cqrs
 ---
 
 유스 케이스는 애플리케이션의 기능을 나타냅니다:

@@ -1,8 +1,12 @@
 ---
-title: "Java 문법"
-date: "2023-12-30"
-description: "Java 문법 정리"
-category: ["java"]
+title: Java 문법
+date: 2023-12-30
+description: Java 문법 정리
+category:
+  - java
+tags:
+  - java
+  - grammar
 ---
 
 - [Java 문법](#java-문법)

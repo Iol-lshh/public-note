@@ -2,7 +2,14 @@
 title: JPA
 date: 2025-01-13
 description: JPA 정리
-category: ["java"]
+category:
+  - java
+tags:
+  - jpa
+  - java
+  - hibernate
+  - jdbc
+  - orm
 ---
 
 1. JDBC vs JPA

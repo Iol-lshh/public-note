@@ -5,6 +5,9 @@ description: Gradle
 category:
   - java
   - basic_java
+tags:
+  - java
+  - gradle
 ---
 
 - 패키지 관리자

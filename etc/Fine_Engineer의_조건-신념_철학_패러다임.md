@@ -6,6 +6,9 @@ category:
   - etc
   - 고찰
   - book
+tags:
+  - book
+  - philosophy
 ---
 ![](img/fine_Engineer_philosophy.webp)
 

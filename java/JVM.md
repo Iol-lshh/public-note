@@ -2,7 +2,13 @@
 title: JVM
 date: 2025-01-14
 description: "Java의 핵심 구성 요소: JDK, JRE, JVM"
-category: ["java"]
+category:
+  - java
+tags:
+  - java
+  - jvm
+  - jdk
+  - jre
 ---
 
 - Java는 모바일 애플리케이션부터 대규모 엔터프라이즈 시스템까지 다양한 영역에서 사용되는 세계적으로 널리 쓰이는 프로그래밍 언어입니다. 그러나 Java 프로그램을 작성하고 실행하며 동작시키기 위해서는 Java 생태계의 세 가지 핵심 구성 요소인 **JDK(Java Development Kit)**, **JRE(Java Runtime Environment)**, **JVM(Java Virtual Machine)** 를 이해하는 것이 중요합니다.  

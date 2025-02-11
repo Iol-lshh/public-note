@@ -2,7 +2,12 @@
 title: API 베스트 프렉티스
 date: 2025-01-27
 description: 경험 많은 개발자가 숙지해야 할 10가지 REST API 핵심 개념
-category: ["pattern"]
+category:
+  - pattern
+tags:
+  - rest
+  - application
+  - pattern
 ---
 
 ![](./img/IMG_1381.jpeg)

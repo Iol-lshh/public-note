@@ -1,8 +1,12 @@
 ---
-title: "PG 주의사항"
-date: "2025-01-30"
-description: "PG 주의사항"
-category: ["DB"]
+title: PG 주의사항
+date: 2025-01-30
+description: PG 주의사항
+category:
+  - DB
+tags:
+  - db
+  - postgresql
 ---
 
 - 대부분의 문제는 초기에는 드러나지 않지만, 데이터가 많아지고 쿼리가 복잡해질수록 심각한 성능 문제로 이어질 수 있습니다.

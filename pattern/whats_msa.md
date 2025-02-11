@@ -5,6 +5,10 @@ description: MSA가 무엇인지 맛보기 정리
 category:
   - pattern
   - microservices_pattern
+tags:
+  - msa
+  - pattern
+  - saga
 ---
 ## 목차
 

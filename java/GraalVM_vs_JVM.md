@@ -2,9 +2,13 @@
 title: GraalVM, JVM 비교
 date: 2025-01-14
 description: GraalVM, JVM 비교
-category: ["java"]
+category:
+  - java
+tags:
+  - java
+  - jvm
+  - graalvm
 ---
-
 1. **GraalVM이란?**
 2. **GraalVM 특징**
 3. **네이티브 Java 코드 실행**

@@ -5,6 +5,13 @@ description: JVM
 category:
   - java
   - basic_java
+tags:
+  - java
+  - jvm
+  - jre
+  - jdk
+  - runtime
+  - gc
 ---
 
 ## 1.1. JDK 구성 요소

@@ -5,6 +5,13 @@ description: 자바 데이터 타입과 객체지향 설계 원칙
 category:
   - java
   - basic_java
+tags:
+  - java
+  - type
+  - class
+  - object
+  - method
+  - oop
 ---
 
 ## 2.1. 타입

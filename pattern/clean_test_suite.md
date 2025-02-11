@@ -2,7 +2,11 @@
 title: clean test suite
 date: 2025-01-13
 description: test
-category: ["pattern"]
+category:
+  - pattern
+tags:
+  - test
+  - pattern
 ---
 
 - 클린 코드 팁: 깨끗한 테스트 없이는 깨끗한 코드를 가질 수 없다
