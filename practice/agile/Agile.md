@@ -14,7 +14,7 @@ tags:
   - lean
   - kanban
 ---
-![header](./img/header.webp)
+![](./img/header.webp)
 
 ## 애자일 (Agile)
 
