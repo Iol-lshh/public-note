@@ -21,11 +21,11 @@ tags:
 
 - <https://agilemanifesto.org/iso/ko/manifesto.html>
 
-![애자일 소프트웨어 개발 선언](Pasted%20image%2020250211132205.png)
+![애자일 소프트웨어 개발 선언](img/declare.png)
 
 ### 애자일 선언 이면의 원칙
 
-![애자일 선언 이면의 원칙](Pasted%20image%2020250211132557.png)
+![애자일 선언 이면의 원칙](img/declare2.png)
 
 ### 반복(iteration)
 
@@ -35,7 +35,7 @@ tags:
 - 점진적 상세화(progressive elaboration)
   - 이전 단계를 개선하면서 얻은 지식을 바탕으로 다음 단계 산출물(계획 등)을 만드는 일
 
-![반복](./img/Pasted%20image%2020250211125238.png)
+![반복](img/agile.png)
 
 ### 백로그(backlog)
 
@@ -48,7 +48,7 @@ tags:
   - 비즈니스 쪽 사람들과 매일 함께 일을 한다.
   - 문서는 도움이 되지만, 정보 전달의 가장 효과적인 방법은 **면대면 대화**이다.
 
-![백로그](./img/Pasted%20image%2020250211125410.png)
+![백로그](img/backlog.png)
 
 ---
 
@@ -109,18 +109,18 @@ tags:
 
 - 제품 백로그 예시
 
-![제품 백로그](./img/Pasted%20image%2020250211134148.png)
+![제품 백로그](img/product_backlog.png)
 
 - 스프린트 백로그 예시
 
-![스프린트 백로그](./img/Pasted%20image%2020250211134311.png)
+![스프린트 백로그](img/splint_backlog.png)
 
 - 증분: 스프린트 마지막에 실제로 개발이 끝나 전달되는 모든 백로그 아이템의 총합
   - 각 증분은 하나의 스프린트에서 완료된 결과(제품의 일부분)
 
 ### 스크럼 이벤트
 
-![스크럼 이벤트](Pasted%20image%2020250211132944.png)
+![스크럼 이벤트](img/splint.png)
 
 #### 스크럼 스프린트
 
@@ -243,13 +243,13 @@ tags:
 | -- | -- | -- | -- | -- | -- |
 | 1 | 2 | 3 | 5 | 8 | 13 |
 
-![user story](./img/Pasted%20image%2020250211153126.png)
+![user story](img/storycard.png)
 
 - 태스크 보드(task board)
   - 팀의 진행 상황을 시각적으로 표현
   - Kanban
 
-![task board](./img/Pasted%20image%2020250211153223.png)
+![task board](img/storyboard.png)
 
 - 계획 수립 포커(planning poker)
   - 팀원들이 각 스토리가 얼마나 큰지 어떻게 개발할지 생각
@@ -258,7 +258,7 @@ tags:
   - 스프린트 기간 동안 남은 작업을 시각적으로 표현
   - 스프린트 기간 동안 남은 작업을 시각적으로 표현
 
-![burndown chart](./img/Pasted%20image%2020250211153550.png)
+![burndown chart](img/burndownchart.png)
 
 #### 제품 백로그 정제 (Product Backlog Refinement)
 
@@ -266,13 +266,13 @@ tags:
 - 백본(backbone): 핵심 패처
 - 살아있는 스켈레톤(walking skeleton): 백본의 가장 중요한 사용자 스토리. 피처
 
-![Product Backlog Refinement](Pasted%20image%2020250211160600.png)
+![Product Backlog Refinement](img/backboneboard.png)
 
 #### 페르소나 (Persona)
 
 - 사용자를 대표하는 가상의 인물
 
-![persona](Pasted%20image%2020250211160708.png)
+![persona](img/persona.png)
 
 ### 회고
 
@@ -301,7 +301,7 @@ tags:
     - 팀원들이 스프린트 동안 개선할 점을 짧게 적음
     - 그만하기/시작하기/계속하기
 
-![짧은 주제](./img/Pasted%20image%2020250211162205.png)
+![짧은 주제](img/retrospect.png)
 
 ---
 
