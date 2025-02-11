@@ -241,7 +241,6 @@ tags:
 
 - 태스크 보드(task board)
   - 팀의 진행 상황을 시각적으로 표현
-  - Kanban
 
 ![task board](img/storyboard.png)
 
