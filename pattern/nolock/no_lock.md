@@ -84,7 +84,7 @@ SET
 FROM
     master m
 INNER JOIN
-    cust c
+    customer c
 ON 
     m.id = c.id;
 ```
