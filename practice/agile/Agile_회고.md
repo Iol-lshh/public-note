@@ -30,9 +30,9 @@ category:
 
 - <https://agilemanifesto.org/iso/ko/manifesto.html>
 
-![애자일 소프트웨어 개발 선언](img/declare.png)
+![애자일 소프트웨어 개발 선언](./img/declare.png)
 
-![애자일 선언 이면의 원칙](img/declare2.png)
+![애자일 선언 이면의 원칙](./img/declare2.png)
 
 애자일(Agile)은 14세기 프랑스어에서 유래했으며, 라틴어 agilis에서 파생되었다. 이는 '행동하다(act)'라는 의미를 포함하며, 단순한 속도가 아닌 **적응력과 유연성**을 강조하는, 이상적인 소프트웨어 개발의 본질과 맞닿아 있다.
 
@@ -195,13 +195,13 @@ CI/CD를 통해, 코드를 자동으로 빌드하고, 테스트를 수행했다.
 
 **애자일은 마음가짐이다!**
 
-![DSU 공유](./img/Pasted%20image%2020250213150524.png)
+![DSU 공유](img/dsu기록.png)
 
-![피자데이](./img/A996570A-FDBC-44F4-9E02-928C2AEC3CF0_1_105_c.jpeg)
+![피자데이](img/피자데이.jpeg)
 
-![피자데이](./img/Pasted%20image%2020250213145257.png)
+![피자데이](img/피자데이2.png)
 
-![스프린트 회고](./img/DB52B71C-5BD5-48D3-B18C-CB524EDE9E42_1_105_c.jpeg)
+![스프린트 회고](img/회고.jpeg)
 
 ---
 
