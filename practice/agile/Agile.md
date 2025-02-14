@@ -1,7 +1,7 @@
 ---
 title: Agile
 date: 2025-02-11
-description: Agile을 구성하는 요소들.. Scrum, XP, Lean, Kanban 정리
+description: Agile 정리
 category:
   - book
   - 방법론
@@ -295,14 +295,3 @@ tags:
     - 그만하기/시작하기/계속하기
 
 ![짧은 주제](img/retrospect.png)
-
----
-
-## 익스트림 프로그래밍 (XP)
-
-- 소프트웨어 팀은 훌륭한 코드를 만들 때 성공했다고 합니다.
-- XP는 팀이 훌륭한 코드를 만들 수 있도록 도와줍니다.
-- 변경에 대한 태도, 마음가짐을 바꾼다.
-
-> "필요할 거라고 예상될 때가 아니라, 항상 정말로 필요할 때 구현하라." - Ron Jeffries, XP의 창시자
-
