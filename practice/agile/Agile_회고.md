@@ -135,13 +135,15 @@ category:
 - **테스트 중심 개발(TDD, Test-Driven Development)**
   - 테스트 코드를 먼저 작성하고 이를 통과하도록 개발
   - 결함 비용 증가 DCI(Defect Cost Increase)를 방지
-- **리팩토링(Refactoring)**
+- **가차 없는 리팩토링(Refactor Mercilessly)**
   - 지속적인 코드 개선을 통해 유지보수성을 높임
+  - 매 주간 주기에 기술적 부채(technical debt)를 갚고, 리팩토링 할 시간을 가짐
 - **페어 프로그래밍(Pair Programming)**
   - 두 명이 한 컴퓨터에서 코드를 함께 작성하며 품질 향상
-- **단순 설계(Simple Design)**
-  - 필요 이상으로 복잡한 설계를 피하고 단순함 유지 (+점진적 설계)
-  - '아무것도 설계하지 말라'가 아닌, '언제나 설계하라'
+- **단순 설계**(Simple Design)와 **점진적 설계**(Incremental Design)
+  - 필요 이상으로 복잡한 설계를 피하고 단순함 유지
+  - 팀이 책임을 따르는 마지막 순간에 설계에 관한 의사결정을 내린다.
+    - '아무것도 설계하지 말라'가 아닌, '언제나 설계하라'
 - **고객과의 긴밀한 협업(Continuous Feedback)**
   - 고객과 지속적인 대화를 통해 요구사항을 반영
 - **짧은 배포 주기(Small Releases)**
