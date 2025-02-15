@@ -1,18 +1,15 @@
 ---
-title: Agile
+title: Agile - Scrum
 date: 2025-02-11
-description: Agile 정리
+description: Agile과 스크럼에 대하여
 category:
   - book
-  - 방법론
+  - agile
 tags:
   - agile
   - practice
   - scrum
-  - xp
   - splint
-  - lean
-  - kanban
 ---
 ![](./img/header.webp)
 
