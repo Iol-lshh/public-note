@@ -10,6 +10,8 @@ tags:
   - pattern
 ---
 
+- Nina Fernanda Duran님의 링크드인 게시글을 참조했습니다.
+
 ![](./img/IMG_1381.jpeg)
 
 ## 1. 리소스 상태 전이 메커니즘
