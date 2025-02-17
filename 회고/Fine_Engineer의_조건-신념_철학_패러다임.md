@@ -3,9 +3,8 @@ title: "Fine Engineer가 되기 위한 조건: 신념, 철학, 패러다임"
 date: 2025-02-08
 description: 과학혁명의 구조를 읽고...
 category:
-  - etc
-  - 고찰
   - book
+  - 고찰
 tags:
   - book
   - philosophy

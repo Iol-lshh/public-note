@@ -11,7 +11,7 @@ tags:
   - scrum
   - splint
 ---
-![](./img/header.webp)
+![](img/header.webp)
 
 마음가짐과 경험이 중요하다!
 
