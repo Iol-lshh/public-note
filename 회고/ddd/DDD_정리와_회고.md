@@ -90,7 +90,7 @@ DDD는 비즈니스 도메인을 분석하여 정리한 도메인 모델을 그�
 
 ---
 
-또한 DDD는 **모델 주도 설계**(Model Driven Design)가 이루어져야 하며, 이때문에 **XP**가 동반되어야 한다.
+또한 DDD는 **모델 주도 설계**(Model Driven Design)가 이루어져야 하며, 이때문에 **XP**(eXtreme Programming)가 동반되어야 한다.
 
 도메인 모델 = 설계 = 코드
 
