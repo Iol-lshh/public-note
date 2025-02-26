@@ -1,5 +1,5 @@
 ---
-title: 2. Java API
+title: 2. Java
 date: 2025-01-05
 description: 자바 데이터 타입과 객체지향 설계 원칙
 category:
