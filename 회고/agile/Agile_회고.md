@@ -3,8 +3,9 @@ title: Agile 정리와 회고
 date: 2025-02-15
 description: Agile 경험 회고 및 구성하는 요소들 정리 - Scrum, XP, Lean, Kanban
 category:
-  - agile
   - 회고
+  - book
+  - agile
 tags:
   - agile
   - scrum
