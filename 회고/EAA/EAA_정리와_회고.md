@@ -21,7 +21,7 @@ tags:
 - 비즈니스 로직 계층
 - 데이터 액세스 계층
 
-마틴 파울러는 엔터프라이즈 애플리케이션 아키텍처 패턴(Enterprise Application Architecture Pattern, EAA)을 체계적으로 정리하고 개념화 했다.
+마틴 파울러는 **엔터프라이즈 애플리케이션 아키텍처 패턴**(Patterns of Enterprise Application Architecture, P of EAA)을 체계적으로 정리하고 개념화 했다.
 
 - Fowler, M. (2002). _Patterns of enterprise application architecture_. Addison-Wesley.
 
