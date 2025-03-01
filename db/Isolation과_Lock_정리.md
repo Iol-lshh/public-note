@@ -14,11 +14,9 @@ tags:
 ---
 ![](img/isolation_header.webp)
 
-애플리케이션은 트랜잭션 일관성을 갖춰야 한다. 트랜잭션은 정합성과 활동성이 모두 고려되어야 한다. 트랜잭션을 어떻게 구현해야 할까?
+애플리케이션은 트랜잭션 일관성을 갖춰야 한다. 트랜잭션은 정합성(Consistency)과 활동성(Liveness)이 모두 고려되어야 한다. 트랜잭션을 어떻게 구현해야 할까?
 
-ACID. 트랜잭션의 일관성(Consistency)은 데이터베이스 시스템의 원자성(Atomicity)과 격리성(Isolation)에 기대어 구현될 수 있다.
-
-[Designing Data-Intensive Applications, Kleppmann]
+> ACID. 트랜잭션의 일관성(Consistency)은 데이터베이스 시스템의 원자성(Atomicity)과 격리성(Isolation)에 기대어 구현될 수 있다. - [Designing Data-Intensive Applications, Kleppmann]
 
 RDBMS의 동작을 살펴보자.
 
