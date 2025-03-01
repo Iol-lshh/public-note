@@ -1,7 +1,7 @@
 ---
 title: Transaction과 Isolation과 Lock 정리
-date: 2025-03-01
-description: "Isolation에 따라 Lock은 어떻게 동작하는가"
+date: 2025-03-02
+description: Isolation에 따라 Lock은 어떻게 동작하는가
 category:
   - DB
   - book
