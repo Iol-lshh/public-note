@@ -6,6 +6,7 @@ category:
   - 회고
   - book
   - pattern
+  - 조영호님_강의
 tags:
   - DDD
   - 도메인_주도_설계
