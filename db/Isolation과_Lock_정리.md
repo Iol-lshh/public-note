@@ -14,9 +14,14 @@ tags:
 ---
 ![](img/isolation_header.webp)
 
-애플리케이션은 트랜잭션 일관성을 갖춰야 한다. 트랜잭션은 정합성(Consistency)과 활동성(Liveness)이 모두 고려되어야 한다. 트랜잭션을 어떻게 구현해야 할까?
+애플리케이션은 트랜잭션 일관성을 갖춰야 한다. 트랜잭션은 정합성(Consistency)과 활동성(Liveness)이 모두 고려되어야 한다. 트랜잭션을 어떻게 구현해야 할까? 보통 ACID를 말한다.
 
-> ACID. 트랜잭션의 일관성(Consistency)은 데이터베이스 시스템의 원자성(Atomicity)과 격리성(Isolation)에 기대어 구현될 수 있다. - [Designing Data-Intensive Applications, Kleppmann]
+- **Atomicity** (원자성): 트랜잭션이 여러 동작으로 이루어져 있어도, 모두 수행되거나 전혀 수행되지 않아야 한다.
+- **Consistency** (일관성, 정합성): 트랜잭션이 무결성과 제약 조건을 유지한다. 불변식(Invariant) 보호
+- **Isolation** (고립성): 트랜잭션들은 서로 독립적으로 실행되어야 하며, 서로 영향을 끼치지 않는다.
+- **Durability** (지속성): 트랜잭션이 성공적으로 완료되면, 영구적으로 저장되어야 한다.
+
+> 트랜잭션의 일관성(Consistency)은 데이터베이스 시스템의 원자성(Atomicity)과 격리성(Isolation)에 기대어 구현될 수 있다. - [Designing Data-Intensive Applications, Kleppmann]
 
 RDBMS의 동작을 살펴보자.
 
@@ -68,10 +73,10 @@ RDBMS의 동작을 살펴보자.
 
 | 격리 수준                | 더티 리드 (Dirty Read) | 비반복 읽기 (Non-Repeatable Read) | 팬텀 리드 (Phantom Read) |
 | -------------------- | ------------------ | ---------------------------- | -------------------- |
-| **READ UNCOMMITTED** | 🛑 가능              | 🛑 가능                        | 🛑 가능                |
-| **READ COMMITTED**   | ✅ 방지됨              | 🛑 발생 가능                     | 🛑 발생 가능             |
-| **REPEATABLE READ**  | ✅ 방지됨              | ✅ 방지됨                        | 🛑 발생 가능             |
-| **SERIALIZABLE**     | ✅ 방지됨              | ✅ 방지됨                        | ✅ 방지됨                |
+| **READ UNCOMMITTED** | 발생 가능❗️            | 발생 가능❗️                      | 발생 가능❗️              |
+| **READ COMMITTED**   | 방지됨 ✅              | 발생 가능❗️                      | 발생 가능❗️              |
+| **REPEATABLE READ**  | 방지됨 ✅              | 방지됨 ✅                        | 발생 가능❗️              |
+| **SERIALIZABLE**     | 방지됨 ✅              | 방지됨 ✅                        | 방지됨 ✅                |
 
 좀 더 자세히 들어가보자. 격리 레벨은 트랜잭션 하에서 조회되는 레코드들에 대해서 동일한 Lock을 제공하는 것으로 구현된다.
 
@@ -79,26 +84,26 @@ RDBMS의 동작을 살펴보자.
 - **READ UNCOMMITTED**: 조회되는 레코드들에 대해서 S-Lock조차 획득하지 않음.
 - **READ COMMITTED**: 조회되는 레코드들에 대해서 S-Lock 획득. 단, **조회가 끝나는 순간 곧바로 S-Lock 반환**. 이러니 다른 트랜잭션이 Update 하는걸 막지 못하는거다.
 - **REPEATABLE READ**: 조회되는 레코드들에 대해서 **트랜잭션이 끝날때까지** S-Lock 획득. Insert하는 레코드는 모르니, 팬텀리드를 막을 수 없다.
-- **SERIALIZABLE**: 조회되는 레코드들마다 트랜잭션이 끝날때까지 **모든 읽는 범위** S-Lock(RangeS-S, 공유 키 범위 + 공유 리소스)을 획득. 쓰기 또한 범위 X-Lock(RangeX-X, 배타 키 범위 + 배타 리소스) 획득. 한 트랜잭션이라도 해당 범위를 갱신하려고 하면 대기 발생.
+- **SERIALIZABLE**: 조회되는 레코드들마다 트랜잭션이 끝날때까지 **모든 읽는 범위** S-Lock(RangeS-S, 공유 키 범위 + 공유 리소스)을 획득. 쓰기 또한 범위 X-Lock(RangeX-X, 배타 키 범위 + 배타 리소스) 획득. 한 트랜잭션이라도 해당 범위를 갱신하려고 하면 대기 발생. (PG는 스냅샷방식을 쓰지만, 아이디어는 동일하다고 본다.)
 
 이제 왜 트랜잭션간에 발생할 수 있는 부작용에 대해서 격리 레벨마다, 방지 되는지 이해된다.
 
 ---
 
-`SELECT ... FOR UPDATE` 쿼리는 조회 행에 대해 X-Lock을 획득하게 된다. `SELECT ... FOR UPDATE`로 비관적 락을 구현하게 되면, 동일한 행을 조회하는 다른 트랜잭션이 S-Lock을 얻지 못하게 되고, **READ COMMITTED의 단순 조회(read)에서도 Deadlock이 발생할 수 있다.** 설사 프로토콜을 잘 정립해서 사내 전역적으로 프로토콜에 대한 컨벤션을 잘 따른다 해도, 트래픽이 높아지면 병목지점이 될 확률이 매우 높다.
+`SELECT ... FOR UPDATE` 쿼리는 **조회 행에 대해 X-Lock을 획득**하게 된다. `SELECT ... FOR UPDATE`로 비관적 락을 구현하게 되면, 동일한 행을 조회하는 다른 트랜잭션이 S-Lock을 얻지 못하게 되고, **READ COMMITTED의 단순 조회(read)에서도 Deadlock이 발생할 수 있다.** 설사 프로토콜을 잘 정립해서 사내 전역적으로 프로토콜에 대한 컨벤션을 잘 따른다 해도, 트래픽이 높아지면 병목지점이 될 확률이 매우 높다.
 
-"우리는 CQRS로 해결할꺼에요. 읽을땐 NoSQL로 읽고, 쓸때마다 NoSQL로 복사해 넣어줄 겁니다. 디비지움은 충분히 빠르거든요!" CQRS는 단순히 읽기(read) 부하를 줄이는 방법일 뿐, 쓰기(write) 충돌을 해결하는 방식이 아니다. 데이터 정합성을 중요시하는 도메인의 트랜잭션 환경에서는 결과적 일관성(eventual consistency)만으로 문제를 해결할 수 없으며, 데이터 불일치 문제를 초래할 가능성이 크다.
+"우리는 CQRS로 해결할꺼에요. 읽을땐 NoSQL로 읽고, 쓸때마다 NoSQL로 복사해 넣어줄 겁니다. 디비지움은 충분히 빠르거든요!" CQRS는 단순히 읽기(read) 부하를 줄이는 방법일 뿐, 쓰기(write) 충돌을 해결하는 방식이 아니다. 데이터 정합성을 중요시하는 도메인의 트랜잭션 환경에서는 결과적 일관성(eventual consistency)만으로 문제를 해결할 수 없으며, 데이터 불일치 문제를 초래할 가능성이 크다. (물론 CQRS도 이제 설명하는 아이디어를 반영 했다면 아주 좋다.)
 
-MySQL에서는 이러한 동시성 문제를 해결할 수 있는 적절한 Lock 메커니즘을 제공하지 않는다. 해결책은 MSSQL과 PostgreSQL에서 찾을 수 있었는데, PostgreSQL보다 MSSQL에서의 해결책이 좀 더 개념을 직관적으로 설명해주고, PostgreSQL 방식이 해결책 구현 방안을 응용가능하게 제공하다. 먼저 MSSQL부터 살펴보자.
+MySQL에서는 이러한 동시성 문제를 해결할 수 있는 적절한 Lock 메커니즘을 제공하지 않는다. 해결책은 MSSQL과 PostgreSQL에서 찾을 수 있었는데, PostgreSQL보다 MSSQL에서의 해결책이 좀 더 개념을 직관적으로 설명해주고, PostgreSQL 방식이 해결책 구현 방안을 설계 가능하게 제공하다. 먼저 MSSQL부터 살펴보자.
 
-MSSQL은 **Update Lock**이라는 특별한 Lock 메커니즘을 제공한다. (정말 직관적인 명칭이 아닐수도 없다. 글 초반에 트랜잭션 시스템이 구현해야 할 두 가지 Lock(Read, Update)에 대해 정리했었다. 마이크로소프트는 종종 자체적인 방식으로 기능을 설계하지만, 이번만큼은 상당히 직관적인 개념 정의의 기능이 아닐 수 없다.)
+MSSQL은 **Update Lock**이라는 특별한 Lock 메커니즘을 제공한다. (정말 직관적인 명칭이 아닐수도 없다. 글 초반에 트랜잭션 시스템이 구현해야 할 두 가지 Read/Update Lock에 대해 정리했었다. 마이크로소프트는 종종 자체적인 방식으로 기능을 설계하지만, 이번만큼은 상당히 직관적인 개념 정의의 기능이 아닐 수 없다.)
 
-- **Update Lock**(U-Lock): U-Lock을 획득한 자원에 대해, 다른 트랜잭션의 U-Lock, X-Lock 획득을 방지한다. S-Lock은 허용된다. U-Lock은 Update 가능성이 있는 단위에 대해 걸어두고, 실제 Update 쿼리 동작시에 Exclusive Lock으로 바뀐다. **전환되는 시점이 트랜잭션 격리 레벨에 따라 다르다.**
+- **Update Lock**(U-Lock): U-Lock을 획득한 자원에 대해, 다른 트랜잭션의 U-Lock, X-Lock 획득을 방지한다. S-Lock은 허용된다. U-Lock은 Update 가능성이 있는 단위에 대해 걸어두고, 실제 Update 쿼리 동작시에 Exclusive Lock으로 바뀐다.
 
 S-Lock과 X-Lock의 실제 적용 시점을 분리해서, **U-Lock을 얻고 있는 동안에도 단순 조회의 경우엔 가능하도록 열어둔 것**이다. 물론 트랜잭션 격리 레벨에 따라 U-Lock도 더 높은 제한의 Lock을 따라가겠지만. **Read Lock 획득이 중요한 시스템에서 교착 상태를 매우 줄이고, 시스템의 활동성(liveness)을 크게 제공하게 된다.** (비관적 락이라는 것에는 변함 없다. 또한 필요에 따라 CQRS를 추가적으로 적용하는 것도 좋을 것이다.)
 
 PostgreSQL에서는 Advisory Lock을 제공하며, 이는 MSSQL의 U-Lock과는 달리, 데이터 행(row)이 아닌 애플리케이션에서 직접 관리하는 논리적 리소스를 대상으로 한다.
 
-- **Advisory Lock**: 애플리케이션 수준에서 정의할 수 있는 사용자 지정 잠금 방식이다. Advisory Lock은 DB 내부의 기본적인 락 메커니즘과 독립적으로 동작하며, 개발자가 직접 **S-Lock과 유사한 공유 잠금(shared lock) 동작을 설계할 수 있다.** (cf. 분산락, Distributed Lock)
+- **Advisory Lock**: 애플리케이션 수준에서 정의할 수 있는 사용자 지정 잠금 방식이다. Advisory Lock은 DB 내부의 기본적인 락 메커니즘과 독립적으로 동작하며, 개발자가 직접 **U-Lock과 유사한 저장 잠금(update lock) 동작을 설계할 수 있다.** (cf. 분산락, Distributed Lock)
 
 U-Lock과 Advisory Lock은 접근 방식이 다르지만, 동일한 아이디어로 문제를 해결한다.  두 방식 모두 트랜잭션에서 락을 획득하되, U-Lock과 X-Lock의 획득을 제한하면서도 S-Lock과는 공유할 수 있도록 동작하게 된다.
