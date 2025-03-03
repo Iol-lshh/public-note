@@ -98,7 +98,7 @@ MySQL에서는 이러한 동시성 문제를 해결할 수 있는 적절한 Lock
 
 MSSQL은 **Update Lock**이라는 특별한 Lock 메커니즘을 제공한다. (정말 직관적인 명칭이 아닐수도 없다. 글 초반에 트랜잭션 시스템이 구현해야 할 두 가지 Read/Update Lock에 대해 정리했었다. 마이크로소프트는 종종 자체적인 방식으로 기능을 설계하지만, 이번만큼은 상당히 직관적인 개념 정의의 기능이 아닐 수 없다.)
 
-- **Update Lock**(U-Lock): U-Lock을 획득한 자원에 대해, 다른 트랜잭션의 U-Lock, X-Lock 획득을 방지한다. S-Lock은 허용된다. U-Lock은 Update 가능성이 있는 단위에 대해 걸어두고, 실제 Update 쿼리 동작시에 Exclusive Lock으로 바뀐다.
+- **Update Lock**(U-Lock): U-Lock을 획득한 자원에 대해, 다른 트랜잭션의 U-Lock, X-Lock 획득을 방지한다. S-Lock은 허용된다. U-Lock은 Update 가능성이 있는 단위에 대해 걸어두고, 실제 Update 쿼리 동작시에 X-Lock으로 바뀐다.
 
 S-Lock과 X-Lock의 실제 적용 시점을 분리해서, **U-Lock을 얻고 있는 동안에도 단순 조회의 경우엔 가능하도록 열어둔 것**이다. 물론 트랜잭션 격리 레벨에 따라 U-Lock도 더 높은 제한의 Lock을 따라가겠지만. **Read Lock 획득이 중요한 시스템에서 교착 상태를 매우 줄이고, 시스템의 활동성(liveness)을 크게 제공하게 된다.** (비관적 락이라는 것에는 변함 없다. 또한 필요에 따라 CQRS를 추가적으로 적용하는 것도 좋을 것이다.)
 
