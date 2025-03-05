@@ -6,7 +6,6 @@ category:
   - 회고
   - book
   - pattern
-  - 조영호님_강의
 tags:
   - Martin_Fowler
   - EAA
