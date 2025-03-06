@@ -1,6 +1,6 @@
 ---
 title: Legacy Code와 Refactoring의 정리와 회고
-date: 2025-03-04
+date: 2025-03-07
 description: "'레거시 코드 활용 전략'과 'Refactoring'을 읽고"
 category:
   - 회고
