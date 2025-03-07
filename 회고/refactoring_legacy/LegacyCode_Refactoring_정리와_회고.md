@@ -38,12 +38,12 @@ Extreme Programming(Beck, 2004)을 이야기하려는 것이 아니다. 처음�
 
 페더스는 소프트웨어 코드를 변경하는 이유를 네 가지라고 봤다.
 
-- 새로운 기능(feature)의 추가
-- 버그 수정
-- 설계 개선
-- 자원 이용의 최적화
+- 새로운 기능의 추가 (new feature)
+- 버그 수정 (bug fix)
+- 설계 개선 (refactoring)
+- 자원 이용의 최적화 (optimizing)
 
-### New Feature vs Bug Patch
+### New Feature vs Bug Fix
 
 새 기능 추가인지, 버그 수정인지는 주관적인 관점이다. 진짜는 **동작에 수정(behavioral change)이 있는지**다.
 
