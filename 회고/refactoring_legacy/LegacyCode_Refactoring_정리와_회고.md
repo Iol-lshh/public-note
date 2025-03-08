@@ -19,7 +19,7 @@ tags:
 
 근래 드는 생각이, 나는 좋은 코드, 깔끔한 코드가 무엇인지 모르겠다... 최근 [엔터프라이즈 애플리케이션 아키텍처 패턴](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/EAA/EAA_%EC%A0%95%EB%A6%AC%EC%99%80_%ED%9A%8C%EA%B3%A0/)(Fowler, 2002)도 읽어보고 [DDD](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/ddd/DDD_%EC%A0%95%EB%A6%AC%EC%99%80_%ED%9A%8C%EA%B3%A0/)와 [XP](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/agile/Agile_%ED%9A%8C%EA%B3%A0/) 도 열심히 찾아봤다. 그러면서 느낀 점이 있었다.
 
-## 도메인 모델 vs 트랜잭션 스크립트 - 좋은 코드를 향한 여정
+## 좋은 코드를 향한 여정
 
 P of EAA에서 파울러는 비즈니스 로직 계층에 대한 패턴으로 **트랜잭션 스크립트**와 **도메인 모델**을 이야기한다. 트랜잭션 스크립트 방식은 유스케이스에 대해 절차적으로 비즈니스 로직을 풀어나가는 방식이고, 도메인 모델은 DDD에서 이야기하는 코드가 도메인 모델이 되는 방식이다.
 
