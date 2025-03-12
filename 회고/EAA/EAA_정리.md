@@ -1,7 +1,7 @@
 ---
-title: EAA 정리와 회고
+title: EAA 정리
 date: 2025-02-27
-description: 마틴 파울러의 엔터프라이즈 애플리케이션 아키텍처 패턴을 읽은 뒤의 정리와 회고
+description: 마틴 파울러의 엔터프라이즈 애플리케이션 아키텍처 패턴을 읽은 뒤의 정리
 category:
   - 회고
   - book
