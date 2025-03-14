@@ -1,5 +1,5 @@
 ---
-title: DDD 정리와 회고
+title: DDD 정리
 date: 2025-02-23
 description: 조영호님의 강의 DDD의 사실과 오해를 듣고, DDD에 대한 요약 정리
 category:

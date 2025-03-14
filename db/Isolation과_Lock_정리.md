@@ -176,22 +176,21 @@ MSSQL의 물리적 Lock 방식과 달리 MySQL은 MVCC를 통해 논리적 스�
 - **REPEATABLE READ**: 트랜잭션 시작 시점에 **새로운 Read View를 생성**하고 트랜잭션 종료 후 휘발
 - **SERIALIZABLE**: 트랜잭션 시작 시 Read View 생성. 읽기 시 범위에 S-Next-Key Lock을 획득하며 트랜잭션 종료까지 유지. 쓰기 시 X-Next-Key Lock 획득
 
-### MySQL Update Lock의 부재
+### MySQL Update Lock 구현 방식
 
 MySQL은 MVCC를 활용하여, 동시성을 확보했다. 하지만 자원의 경합 상태에 이르렀을 때, 동기화를 필요로 한다. 이때 잠금을 사용하게 된다. MySQL은 Lock을 두 가지 제공해준다. S-Lock과 X-Lock이다. 이를 쿼리로 명시적으로 획득한다면 다음과 같다.
 
-- `SELECT ... FOR UPDATE`: 트랜잭션 동안 조회 레코드에 X-Lock 획득
-- `SELECT ... FOR SHARE`: 트랜잭션 동안 조회 레코드에 공유 락(S-Lock) 획득
+- `SELECT ... FOR UPDATE`: 트랜잭션 동안 조회 레코드에 배타 락(Exclusive Lock, X-Lock) 획득
+- `SELECT ... FOR SHARE`: 트랜잭션 동안 조회 레코드에 공유 락(Shared Lock, S-Lock) 획득
 
-잠금은 비즈니스 트랜잭션이 **데이터를 로드하기 전에 잠금을 획득해야 한다**. 잠근 데이터의 **최신 버전을 얻는다는 보장이 없다면, 잠금을 획득할 필요가 없다**. 즉 비관적 락이 필요하다면, `SELECT ... FOR UPDATE` X-Lock을 획득 해야만 하는 것이다.
+잠금은 비즈니스 트랜잭션이 **데이터를 로드하기 전에 잠금을 획득해야 한다**. 잠근 데이터의 **최신 버전을 얻는다는 보장이 없다면, 잠금을 획득할 필요가 없다**. 즉 비관적 락이 필요하다면, `SELECT ... FOR UPDATE` X-Lock을 획득 해야한다. 이때 개념적으로 MSSQL의 U-Lock 아이디어를 적용이 가능하다.
 
-문제는 **조회 행에 대해 X-Lock을 획득**하게 되면, 동일한 행을 조회하는 다른 트랜잭션이 S-Lock을 얻지 못하게 되고, **READ COMMITTED의 단순 조회(read)에서도 Deadlock이 발생할 수 있다.** 설사 프로토콜을 잘 정립해서 사내 전역적으로 프로토콜에 대한 컨벤션을 잘 따른다 해도, 트래픽이 높아지면 병목지점이 될 확률이 매우 높다.
+- **그냥 읽는다**: 최종적 일관성을 지키면 되는 경우에 해당한다. 수정이 일어나는 트랜잭션을 기다리지 않고 바로 읽고 싶을 때 사용한다.
+- **읽을 때, S-Lock을 획득한다**: 정합성이 매우 중요하여, 수정이 일어나는 트랜잭션을 기다려야 할 때 사용한다.
 
-"우리는 CQRS로 해결할꺼에요. 읽을땐 NoSQL로 읽고, 쓸때마다 NoSQL로 복사해 넣어줄 겁니다. 디비지움은 충분히 빠르거든요!" CQRS는 읽기(read) 부하를 줄이는 방법일 뿐, 쓰기(write) 충돌을 해결하는 방식이 아니다. 데이터 정합성을 중요시하는 도메인의 트랜잭션 환경에서는 결과적 일관성(eventual consistency)만으로 문제를 해결할 수 없으며, 데이터 불일치 문제를 초래할 가능성이 크다. (물론 CQRS도 이제 설명하는 아이디어를 반영 했다면 아주 좋다.)
+---
 
-MSSQL의 U-Lock 아이디어를 적용할 때다.
-
-PostgreSQL은 MySQL과 유사한 방식의 MVCC로 트랜잭션을 구현했다. Lock에도 S-Lock과 X-Lock만이 존재하는데, 대신 Advisory Lock을 제공한다. 이는 MSSQL의 U-Lock과는 달리, 데이터 행(row)이 아닌 애플리케이션에서 직접 관리하는 논리적 리소스를 대상으로 한다.
+PostgreSQL은 MySQL과 유사한 방식의 MVCC로 트랜잭션을 구현한다. Lock에도 S-Lock과 X-Lock만이 존재하는데, 대신 Advisory Lock을 제공한다. 이는 MSSQL의 U-Lock과는 달리, 데이터 행(row)이 아닌 애플리케이션에서 직접 관리하는 논리적 리소스를 대상으로 한다.
 
 - **Advisory Lock**: 애플리케이션 수준에서 정의할 수 있는 사용자 지정 잠금 방식이다. Advisory Lock은 DB 내부의 기본적인 락 메커니즘과 독립적으로 동작하며, 개발자가 직접 **U-Lock과 유사한 저장 잠금(update lock) 동작을 설계할 수 있다.**
 
