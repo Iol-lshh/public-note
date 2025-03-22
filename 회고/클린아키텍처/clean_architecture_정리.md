@@ -11,6 +11,8 @@ tags:
   - 엉클밥
   - clean_architecture
 ---
+![](img/헤더.webp)
+
 클린 아키텍처. 개발자가 된 초창기에 난 이 책을 읽고 온전히 이해하지 못했다. 아직도 많이 부족하지만, 다양한 경험을 겪고, 많은 책들을 읽고, 공부했다. [애자일과 Extreme Programming](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/agile/Agile_%ED%9A%8C%EA%B3%A0/), [도메인 주도 설계](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/ddd/DDD_%EC%A0%95%EB%A6%AC/), [앤터프라이즈 애플리케이션 아키텍처 패턴](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/EAA/EAA_%EC%A0%95%EB%A6%AC/), [리펙토링](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/refactoring_legacy/LegacyCode_Refactoring_%EC%A0%95%EB%A6%AC%EC%99%80_%ED%9A%8C%EA%B3%A0/), [테스트](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/test/%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A0%95%EB%A6%AC/) 등의 주제들에 대해 지속적으로 관심을 갖고 있다. 그리고 다시 클린아키텍처를 이해하기 위해 돌아왔다. 내가 다시 읽어본 클린아키텍처를 통해, 무엇이 중요하다고 느꼈고, 무엇을 이해했는지 정리해보겠다.
 
 ---
