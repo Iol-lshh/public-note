@@ -11,7 +11,7 @@ tags:
   - 엉클밥
   - clean_architecture
 ---
-클린 아키텍처. 개발자가 된 초창기에 난 이 책을 읽고 온전히 이해하지 못했다. 아직도 많이 부족하지만, 다양한 경험을 겪고, 많은 책들을 읽고, 공부했다. [애자일과 Extreme Programming](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/agile/Agile_%ED%9A%8C%EA%B3%A0/), [도메인 주도 설계](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/ddd/DDD_%EC%A0%95%EB%A6%AC/), [앤터프라이즈 애플리케이션 아키텍처 패턴](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/EAA/EAA_%EC%A0%95%EB%A6%AC/), [리펙토링](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/refactoring_legacy/LegacyCode_Refactoring_%EC%A0%95%EB%A6%AC%EC%99%80_%ED%9A%8C%EA%B3%A0/), [테스트](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/test/%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A0%95%EB%A6%AC/) 등의 주제들에 대해 지속적으로 관심을 갖고 있다. 그리고 다시 클린아키텍처를 이해하기 위해 돌아왔다. 내가 다시 읽어본 클린아키텍처를 통해, 무엇이 중요하다고 느꼈고, 무엇을 이해했는지 서술해보겠다.
+클린 아키텍처. 개발자가 된 초창기에 난 이 책을 읽고 온전히 이해하지 못했다. 아직도 많이 부족하지만, 다양한 경험을 겪고, 많은 책들을 읽고, 공부했다. [애자일과 Extreme Programming](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/agile/Agile_%ED%9A%8C%EA%B3%A0/), [도메인 주도 설계](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/ddd/DDD_%EC%A0%95%EB%A6%AC/), [앤터프라이즈 애플리케이션 아키텍처 패턴](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/EAA/EAA_%EC%A0%95%EB%A6%AC/), [리펙토링](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/refactoring_legacy/LegacyCode_Refactoring_%EC%A0%95%EB%A6%AC%EC%99%80_%ED%9A%8C%EA%B3%A0/), [테스트](https://iol-lshh.github.io/%ED%9A%8C%EA%B3%A0/test/%ED%85%8C%EC%8A%A4%ED%8A%B8_%EC%A0%95%EB%A6%AC/) 등의 주제들에 대해 지속적으로 관심을 갖고 있다. 그리고 다시 클린아키텍처를 이해하기 위해 돌아왔다. 내가 다시 읽어본 클린아키텍처를 통해, 무엇이 중요하다고 느꼈고, 무엇을 이해했는지 정리해보겠다.
 
 ---
 
@@ -119,7 +119,7 @@ DIP를 사용하여 화살표 방향을 바꿈으로써, 변경에 안전하게 
 
 이때 컴포넌트를 어떻게 **구성**할지, 컴포넌트 간의 **관계**를 어떻게 가져야 할지가 중요하다.
 
-### 컴포넌트를 구성하는 관점
+### 컴포넌트 구성
 
 - 재사용/릴리스 등가 원칙 (Reuse/Release Equivalence Principle, REP)
 - 공통 폐쇄 원칙 (Common Closure Principle, CCP)
@@ -147,9 +147,9 @@ DIP를 사용하여 화살표 방향을 바꿈으로써, 변경에 안전하게 
 
 이 응집도의 세 원칙은 서로 상충된다. REP와 CCP는 포함(inclusive) 원칙으로, 컴포넌트를 크게 만든다. 반면 CRP는 배제(exclusive) 원칙으로, 컴포넌트를 작게 만든다. 때문에 위 그림과 같은 균형(tension) 다이어그램을 갖게 된다. 트레이드 오프를 고려하자. REP와 CRP는 **사소한 변경에도 많은 컴포넌트들에 영향**을 주게 되는 경향이 있다. CCP와 REP는 **불필요하고 과도한 릴리스 주기**를 일으킬 경향이 있다. 실용적인 관점으로 바라봤을 때, 개발 초기에는 CCP보다 REP가 더 중요하며, 프로젝트와 조직의 상황에 따라 그래프에서 컴포넌트가 위치해야할 전략이 바뀔 수 있다고 한다.
 
-### 컴포넌트 결합도 관점
+### 컴포넌트 간 관계
 
-**컴포넌트 사이의 관계**는 어떻게 설계되어야 하는가? 기술적이고, 정치적이며, 가변적인 관점에서 개발 가능성과 논리적 설계를 살펴봐야 한다.
+**컴포넌트 사이의 관계**는 기술적이고, 정치적이며, 가변적인 관점에서 개발 가능성과 논리적 설계를 살펴봐야 한다.
 
 - 의존성 비순환 원칙 (Acyclic Dependencies Principle, ADP)
 - 안정된 의존성 원칙 (Stable Dependencies Principle, SDP)
@@ -331,7 +331,7 @@ DIP를 사용하여 화살표 방향을 바꿈으로써, 변경에 안전하게 
 
 - 세 가지 프로그래밍 패러다임을 인지하고,
 - SOLID를 이해하고,
-- 클래스와 컴포넌트 간의 구성에 있어 깔끔한 응집도와 결합도로 관심사를 잘 분리하여,
+- 클래스와 컴포넌트 간의 구성에 있어 깔끔하게 관심사와 관계를 잘 설계하고 분리하여 뒤에,
 - 고수준 추상화와 정책을 더 안쪽에 두고 그 안쪽을 향해 의존성을 갖춘
 
 아키텍처를 설계하는 과정이다. 이제 돌아가서 클린 아키텍처를 적용해 볼 차례다.
