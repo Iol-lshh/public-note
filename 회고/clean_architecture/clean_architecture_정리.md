@@ -1,6 +1,6 @@
 ---
 title: Clean Architecture 정리
-date: 2025-03-17
+date: 2025-03-23
 description: 클린 아키텍처 정리와 의존성에 대한 고찰
 category:
   - 회고
