@@ -72,7 +72,7 @@ tags:
 
 ---
 
-## 기계공감
+## [기계공감](https://wa.aws.amazon.com/wellarchitected/2020-07-02T19-33-23/wat.concept.mechanical-sympathy.en.html)
 
 > 레이싱 드라이버가 되려면 엔지니어가 될 필요는 없지만, 기계적 공감 능력은 있어야 합니다. - Jackie Stewart
 
