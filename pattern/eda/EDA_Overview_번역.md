@@ -8,7 +8,7 @@ category:
   - 번역
 ---
 - Brenda M. Michelson
-- 원본: <https://complexevents.com/wp-content/uploads/2006/07/OMG-EDA-bda2-2-06cc.pdf>
+- 원본: [Event-Driven Architecture Overview (Brenda M. Michelson, 2006)](https://complexevents.com/wp-content/uploads/2006/07/OMG-EDA-bda2-2-06cc.pdf)
 
 > 이벤트 중심의 SOA는 EDA의 일부일 뿐이다
 
