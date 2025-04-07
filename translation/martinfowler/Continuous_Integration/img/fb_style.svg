@@ -1,0 +1,520 @@
+
+<svg class = '' id = '' version = '1.1' viewBox = '0 0 900 350' xmlns = 'http://www.w3.org/2000/svg'>
+<style>svg {font-family: sans-serif; font-size: 24px; line-height: 1.2}
+.explain {color: #ef5ba1; font-style: italic}
+path.explain {stroke: #ef5ba1}
+
+.integrate {fill: red; stroke: red; color: red}
+.feature {fill: grey; stroke: grey}
+.completion {stroke: black; stroke-width: 2}</style>
+
+<g transform = 'translate(0,100)'>
+<g>
+<line class = 'completion' x1 = '144' x2 = '144' y1 = '0' y2 = '40'></line>
+
+<line class = 'completion' x1 = '416' x2 = '416' y1 = '0' y2 = '40'></line>
+
+<line class = 'completion' x1 = '624' x2 = '624' y1 = '0' y2 = '40'></line>
+
+<rect class = 'feature' height = '20' width = '16' x = '0' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '16' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '32' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '48' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '64' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '80' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '96' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '112' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '128' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '144' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '160' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '176' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '184' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '192' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '208' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '224' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '232' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '240' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '256' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '272' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '288' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '304' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '312' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '320' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '336' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '344' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '352' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '360' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '368' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '384' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '400' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '416' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '432' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '448' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '464' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '480' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '488' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '496' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '512' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '528' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '544' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '560' y = '10'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '576' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '584' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '592' y = '10'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '608' y = '10'></rect>
+</g>
+
+<g>
+<line class = 'completion' x1 = '112' x2 = '112' y1 = '50' y2 = '90'></line>
+
+<line class = 'completion' x1 = '304' x2 = '304' y1 = '50' y2 = '90'></line>
+
+<line class = 'completion' x1 = '576' x2 = '576' y1 = '50' y2 = '90'></line>
+
+<rect class = 'feature' height = '20' width = '16' x = '0' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '16' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '32' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '48' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '64' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '80' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '96' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '112' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '120' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '128' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '144' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '152' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '160' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '176' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '184' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '192' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '208' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '224' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '232' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '240' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '256' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '272' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '288' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '304' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '320' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '336' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '344' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '352' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '360' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '368' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '384' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '400' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '416' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '424' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '432' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '448' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '464' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '480' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '488' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '496' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '512' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '528' y = '60'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '544' y = '60'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '560' y = '60'></rect>
+</g>
+
+<g>
+<line class = 'completion' x1 = '112' x2 = '112' y1 = '100' y2 = '140'></line>
+
+<line class = 'completion' x1 = '336' x2 = '336' y1 = '100' y2 = '140'></line>
+
+<line class = 'completion' x1 = '544' x2 = '544' y1 = '100' y2 = '140'></line>
+
+<rect class = 'feature' height = '20' width = '16' x = '0' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '16' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '32' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '48' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '64' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '80' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '96' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '112' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '120' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '128' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '144' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '152' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '160' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '176' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '184' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '192' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '208' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '224' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '232' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '240' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '256' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '272' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '288' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '304' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '312' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '320' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '336' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '352' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '360' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '368' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '384' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '400' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '416' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '424' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '432' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '448' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '464' y = '110'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '480' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '488' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '496' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '512' y = '110'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '528' y = '110'></rect>
+</g>
+
+<g>
+<line class = 'completion' x1 = '176' x2 = '176' y1 = '150' y2 = '190'></line>
+
+<line class = 'completion' x1 = '352' x2 = '352' y1 = '150' y2 = '190'></line>
+
+<line class = 'completion' x1 = '544' x2 = '544' y1 = '150' y2 = '190'></line>
+
+<rect class = 'feature' height = '20' width = '16' x = '0' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '16' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '32' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '48' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '64' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '80' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '96' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '112' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '128' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '144' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '152' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '160' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '176' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '192' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '208' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '224' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '232' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '240' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '256' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '272' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '288' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '304' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '312' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '320' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '336' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '344' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '352' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '368' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '384' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '400' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '416' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '424' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '432' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '448' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '464' y = '160'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '480' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '488' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '496' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '512' y = '160'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '528' y = '160'></rect>
+</g>
+
+<g>
+<line class = 'completion' x1 = '224' x2 = '224' y1 = '200' y2 = '240'></line>
+
+<line class = 'completion' x1 = '480' x2 = '480' y1 = '200' y2 = '240'></line>
+
+<line class = 'completion' x1 = '640' x2 = '640' y1 = '200' y2 = '240'></line>
+
+<rect class = 'feature' height = '20' width = '16' x = '0' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '16' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '32' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '48' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '64' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '80' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '96' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '112' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '128' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '144' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '152' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '160' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '176' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '184' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '192' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '208' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '224' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '240' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '256' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '272' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '288' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '304' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '312' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '320' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '336' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '344' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '352' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '360' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '368' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '384' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '400' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '416' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '424' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '432' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '448' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '464' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '480' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '496' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '512' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '528' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '16' x = '544' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '560' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '576' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '584' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '592' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '16' x = '608' y = '210'></rect>
+
+<rect class = 'integrate' height = '20' width = '8' x = '624' y = '210'></rect>
+
+<rect class = 'feature' height = '20' width = '8' x = '632' y = '210'></rect>
+</g>
+</g>
+
+<foreignObject class = 'explain' height = '90' width = '300' x = '30' y = '5'>
+<div xmlns = 'http://www.w3.org/1999/xhtml'>when a developer completes a feature...</div>
+</foreignObject>
+
+<g>
+<path class = 'explain' d = 'M 110 65 L 143 95'></path>
+</g>
+
+<foreignObject class = 'explain' height = '60' width = '300' x = '300' y = '25'>
+<div xmlns = 'http://www.w3.org/1999/xhtml'>…all others need to integrate</div>
+</foreignObject>
+
+<g>
+<path class = 'explain' d = 'M 295 75 L 150 170'></path>
+</g>
+
+<g>
+<path class = 'explain' d = 'M 295 75 L 150 220'></path>
+</g>
+
+<g>
+<path class = 'explain' d = 'M 295 75 L 150 270'></path>
+</g>
+
+<g>
+<path class = 'explain' d = 'M 295 75 L 150 320'></path>
+</g>
+</svg>
