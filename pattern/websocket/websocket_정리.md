@@ -56,23 +56,7 @@ HTTP는 **무상태(stateless)** 프로토콜이기 때문에 클라이언트와
 - HttpSession은 특정 요청(request)이 들어왔을 때만 스레드에 연결한다.
 - 요청 처리가 끝나면 HttpSession은 더 이상 스레드에 연결되지 않고, 세션 저장소에 다시 캐싱(보관)된 상태로 유지한다.
 
-```mermaid
-flowchart TD
-
-id1([클라이언트: HTTP 요청 전송 - SESSION ID 포함 또는 없음])
-id2[서버: 세션 존재 여부 확인]
-id3{세션 있음?}
-id4[기존 HttpSession 로드]
-id5[새로운 HttpSession 생성]
-id6[세션에 데이터 읽기/쓰기]
-id7[필요 시, 응답에 SESSION ID 쿠키 포함]
-id8[응답 전송 완료]
-
-id1 --> id2 --> id3
-id3 -- 예 --> id4 --> id6 --> id8
-id3 -- 아니오 --> id5 --> id6 --> id7 --> id8
-
-```
+![](세션.png)
 
 ### `WebSocketSession`
 
@@ -82,17 +66,7 @@ WebSocket은 HTTP 프로토콜과는 별개로 동작하며, TCP 커넥션 기�
 
 Spring WebSocket은 연결된 소켓에 메시지가 도착하면, 컨테이너에서 관리하는 스레드 풀에서 사용 가능한 스레드를 할당해 메시지를 처리한다.
 
-```mermaid
-flowchart TD
-
-id1([Client WebSocket: 연결 - TCP, 지속 유지])
-id2([WebSocket 컨테이너: 연결 유지 - 메시지 이벤트 발생 시 처리])
-id3([Dispatcher: WebSocketHandler 실행])
-id4([TaskExecutor 스레드 풀: 메시지 도착 시 작업 스레드 할당 후 반환])
-
-id1 --> id2 --> id3 --> id4
-
-```
+![](웹소켓.png)
 
 | 항목                 | 유지 방법         | 자원 소모                   | 풀 사용 여부       |
 | ------------------ | ------------- | ----------------------- | ------------- |
@@ -119,15 +93,7 @@ id1 --> id2 --> id3 --> id4
 
 웹 소켓을 분산환경에서 사용하기 위해선 웹소켓 세션이 만들어진 서버를 찾아가야 한다. 클라이언트로부터 메시지 전송 요청을 받았을 때, 웹 소켓 세션이 만들어진 곳을 찾아가는 것이다. 이를 위해 메시지를 분산 서비스가 볼 수 있는 곳으로 발행한다. 발행된 메시지는 모든 서버가 바라보고 있으며, 자신이 관리하는 세션이라면, 이를 받아와 WebSocketSession을 활성화하고 메시지를 발송하게 된다.
 
-```mermaid
-flowchart TD
-
-id1([클라이언트: 메시지 전송 => server-1로])
-id2([server-1: Redis/Kafka에 메시지 Publish])
-id3([모든 서버: Redis/Kafka 메시지 Subscribe])
-id4([각 서버: 자신이 관리하는 WebSocketSession으로 메시지 전송])
-id1-->id2-->id3-->id4
-```
+![](분산웹소켓세션.png)
 
 물론 pub/sub이 아니라, 단순히 세션 위치를 라우팅 해주는 방법을 사용해도 된다. 이때 라우팅 테이블을 각 서버가 실시간으로 공유되어야 한다. 그 방법이 영속성을 조회한다던지(레디스든 디비든), 서비스로 운영한다던지, 어떤 방법이든 상관 없다.
 
