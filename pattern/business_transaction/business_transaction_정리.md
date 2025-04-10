@@ -84,8 +84,6 @@ I/O건 CPU건, 쓰레드건 상관없다. 중요한건 그것을 대기 상태�
 
 동기화는 동시성 시스템에서의 타이밍 조율이다.
 
-위키백과에서는 동기화에 대해 이렇게 설명한다.
-
 > 동기화(Synchronization)란 **시스템이 조화를 이루어 작동하도록 이벤트를 조율하는 것**을 말합니다. 예를 들어, 오케스트라의 지휘자(conductor)는 오케스트라가 동기화(synchronized)되거나 **일정한 시간(in time)에 맞춰 연주하도록 조율**합니다. 모든 부분이 동시에 작동하는 시스템은 동기적(synchronous) 또는 "동기화된(in sync)" 상태라고 하며, 그렇지 않은 경우를 [비동기](https://en.wikipedia.org/wiki/Asynchronous_system "비동기 시스템")적(asynchronous)이라고 합니다. - [동기화](https://en.wikipedia.org/wiki/Synchronization)
 
 컴퓨터 과학 관점에서 조금더 세부적으로 정의를 찾아보면 다음과 같다.
