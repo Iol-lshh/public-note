@@ -46,9 +46,11 @@ HTTP로 제공되는 서비스는 클라이언트 상태에 대해 연속성을 
 
 ---
 
-HTTP 세션과 웹소켓은 비슷하면서도 다르다. 스프링의 `WebSocketSession`, `HttpSession` 두 개의 세부 구현을 통해 비교해보자.
+HTTP 세션과 웹소켓은 비슷하면서도 다르다. 스프링의 `WebSocketSession`, `HttpSession` 두 개의 세부 구현의 비교를 통해, 웹소켓의 동작 방식에 대해 이해해보자.
 
 ## `WebSocketSession` vs `HttpSession`
+
+두 가지 모두 상태를 유지한다는 점에서 동일하다. 하지만 실제 동작에는 차이가 있다. HTTP 세션은 상태를 유지할 뿐이다. 웹소켓 세션은 상태를 유지할 뿐만 아니라, 논리적 연결을 유지하기까지 한다.
 
 ### `HttpSession`
 
