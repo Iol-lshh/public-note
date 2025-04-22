@@ -1,6 +1,6 @@
 ---
 title: Synchronization 정리
-date: 2025-04-10
+date: 2025-04-22
 description: 동기화(Synchronization)부터 Synchronous/Asynchronous, Block/Nonblock 정리
 category:
   - pattern
