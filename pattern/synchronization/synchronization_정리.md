@@ -91,9 +91,9 @@ CAS는 일종의 **낙관적 동시성 제어(optimistic concurrency control)** 
 아키텍처에 따라 구현 방법이 달라지는데,
 
 - **x86**: `CMPXCHG`
-- **ARM**: `LDREX` / `STREX` 조합 ()
+- **ARM**: `LDREX` / `STREX` 조합
 
-x86의 `CMPXCHG`은 단일 명령어로 CAS로 동작된다. ARM은 단일 명령어가 없다. 여러 명령어 조합을 통해 CAS를 구현한다.
+x86의 `CMPXCHG`은 단일 명령어로 CAS로 동작된다. ARM은 단일 명령어가 없다. 여러 명령어 조합을 통해 CAS를 구현한다. (ARMv8-A 부터는 `CAS`가 생기긴 했다.)
 
 ### 2.1. `LDREX` / `STREX` 조합
 
