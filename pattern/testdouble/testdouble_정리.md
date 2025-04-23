@@ -1,6 +1,6 @@
 ---
 title: Test Double 정리
-date: 2025-04-22
+date: 2025-04-23
 description: 테스트 더블 - 스텁과 목에 대한 상세 비교
 category:
   - pattern
