@@ -331,7 +331,7 @@ public class Account {
 
 ```java
 @Service(level = 2)
-public class OrderOrchestratorService2 {
+public class OrderService2 {
 
 	private final ItemService1 itemService;
     private final OrderService orderService;
