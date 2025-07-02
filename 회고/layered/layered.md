@@ -23,7 +23,6 @@ tags:
 1. MVC (Model - View - Controller)
 2. 멀티 티어 아키텍처 (Multitier Architecture)
 3. 서비스
-4. 객체 지향 설계
 
 역사적 초기 모델인 MVC로 시작하여, 물리적에서 논리적으로, 그리고 더 추상화하고 복잡한 논리를 단순하게 처리할 수 있는 방향으로 글을 전개했다.
 
@@ -144,7 +143,7 @@ public class UserController {
 
 ## 2. 멀티 티어 아키텍처 (Multi Tier Architecture)
 
-점차 애플리케이션이 점차 복잡해짐에 따라, 물리적인 단위에 따라 Presentation, Logic, Data를 [여러 Tier](https://en.wikipedia.org/wiki/Multitier_architecture#Three-tier_architecture)로 구분하게 된다.
+애플리케이션이 복잡해짐에 따라, 물리적인 단위에 따라 Presentation, Logic, Data를 [여러 Tier](https://en.wikipedia.org/wiki/Multitier_architecture#Three-tier_architecture)로 구분하게 된다.
 
 - **Presentation Tier** - 사용자의 접근 제어
 - **Logic Tier** - 애플리케이션 기능 제어
@@ -154,7 +153,7 @@ public class UserController {
 
 개발 환경의 변화에 따라서, 과거 로컬 애플리케이션의 MVC는 웹 환경이 되면서 영속성과 서버, 클라이언트가 분리된 3-Tier로 세분화되었다. 그리고 더 나아가 Front End, Back End, Data 처리 등으로 티어는 더 세분화된다.
 
-여기서 주의할 점은 Tier와 Layer의 차이다. 해당 단어에 대해 단체들이 어떻게 정의하느냐에 따라 다를 수 있다. 한국어로 번역하면 둘다 계층이다. 마틴 파울러는 [해당 글](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)에서 "These layers are logical layers not physical tiers."라고 이야기하고 있다. 즉 Layer라는 것은 한가지 관심사에 대해 책임을 지는 논리적 계층을 의미하며, 이는 물리적 계층을 의미하는 Tier와는 다르다.
+여기서 주의할 점은 Tier와 Layer의 차이다. 해당 단어에 대해 단체들이 어떻게 정의하느냐에 따라 다를 수 있다. 한국어로 번역하면 둘다 계층이다. 마틴 파울러는 [해당 글](https://martinfowler.com/bliki/PresentationDomainDataLayering.html)에서 "These layers are logical layers not physical tiers."라고 이야기하고 있다. 즉 Layer라는 것은 한가지 관심사에 대해 책임을 지는 논리적 계층을 의미하며, 이는 물리적 계층을 의미하는 Tier와는 다르다고 보겠다.
 
 ### 2.1. 레이어드 아키텍처 (Layered Architecture)
 
@@ -204,10 +203,9 @@ Service Design Pattern(Robert Daigneau, 2011)에서는 서비스 구현 패턴�
 
 트랜잭션 스크립트를 설명하기 앞서 절차 지향 프로그래밍(Procedural Programming) 또는 구조적 프로그래밍(Structured Programming)이라 하는 것에 대해 먼저 생각해보자.
 
-엉클 밥은 [클린 아키텍처](https://iol-lshh.github.io/회고/clean_architecture/clean_architecture_정리/)를 설명하기 위해 프로그래밍 패러다임 세 가지에 대해 설명한다. 그 중 첫 번째로 나오는 것이 구조적 프로그래밍이다. **순차**sequence, **분기**selection, **반복**iteration만을 이용한 루틴을 이용한 프로그래밍 방법을 의미한다. 제어흐름의 **직접적인 전환**에 대한 규칙을 의미한다.
+엉클 밥은 [클린 아키텍처](https://iol-lshh.github.io/회고/clean_architecture/clean_architecture_정리/)를 설명하기 위해 프로그래밍 패러다임 세 가지에 대해 설명한다. 그 중 첫 번째로 나오는 것이 구조적 프로그래밍이다. **순차**sequence, **분기**selection, **반복**iteration으로 만든 루틴을 이용한 프로그래밍 방법을 의미한다. 제어흐름의 **직접적인 전환**에 대한 규칙을 의미한다.
 
 트랜잭션 스크립트는 구조적 프로그래밍 요소를 이용하여 로직을 빠르게 구현한다.
-
 
 ![](img/transaction_script.png)
 
@@ -329,7 +327,7 @@ public class Account {
 
 다음 코드는 서비스가 하위 서비스를 부르고 있다.
 
-코드의 중복을 없애기 위한 방법으로 서비스가 서비스를 부르게 작성하는 상황에서 생기는 순환성을 방지하기 위한 목적에서 `@Service`어노테이션을 재정의하고 `level`이란 속성을 추가했다. `level`의 값이 높을수록 상위 계층이며, 좀 더 파사드 서비스다. `level` 값이 낮은 서비스는 높은 값의 서비스를 참조하지 못한다.
+코드의 중복을 없애기 위한 방법으로 서비스가 서비스를 부르게 작성하는 상황에서 생기는 순환성을 방지하기 위한 목적에서 `@Service`어노테이션을 재정의하고 `level`이란 속성을 추가했다. `level`의 값이 높을수록 상위 계층이며, 좀 더 파사드 서비스다. `level` 값이 낮은 서비스는 높은 값의 서비스를 참조하지 못하도록 어노테이션 프로세서를 작성했다.
 
 ```java
 @Service(level = 2)
@@ -347,9 +345,9 @@ public class OrderOrchestratorService2 {
 @Service(level = 1)
 public class ItemService1 {
 
-    final ItemRepository itemRepository;
-    final PointService pointService;
-    final ProductService productService;
+    private final ItemRepository itemRepository;
+    private final PointService pointService;
+    private final ProductService productService;
 
 	...
 }
@@ -359,7 +357,7 @@ public class ItemService1 {
 @Service
 public class ItemService {
 
-    final ItemRepository itemRepository;
+    private final ItemRepository itemRepository;
 
 	...
 }
@@ -379,7 +377,7 @@ public class OrderService {
 
 문제에 앞서, 레이어드 아키텍처가 무엇인지 다시 떠올려볼 필요가 있다. **각 레이어가 그 이름에 걸맞은 관심사만을 적절하게 담당하고 있는가**? 단순히 서비스가 서비스를 호출하는 구조는 레이어의 관심사를 명확하게 분리한 것이 아니다. 애초에 왜 파사드 서비스를 작성하는가. 트랜잭션 스크립트 방식의 한계가 온 것이 아닌지, 파사드 서비스가 **레이어로써의 책임을 명백하게 정의**하지 못한다면, 그 구조가 기술부채이고 응급처치가 아니었는지 되돌아볼 필요가 있다.
 
-때문에 위 방식은 안티 패턴이다. 비즈니스 복잡도가 더 올라가면, 서비스 레벨을 정하는 규칙은유지보수의 난이도만 더 올릴 뿐이다.
+때문에 위 방식은 안티 패턴이다. 비즈니스 복잡도가 더 올라가면, 서비스 레벨을 정하는 규칙은 유지보수의 난이도만 더 올릴 뿐이다.
 
 적절한 시점에 도메인 모델 설계와 커맨드 호출자, 워크플로우 커넥터 등의 서비스 구현 방법으로 리팩터링하여 기술 부채를 해소해야한다.
 
