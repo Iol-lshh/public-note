@@ -70,7 +70,7 @@ category:
 
 내 하드웨어 구성이 음악 감상 취미에서 본격적이진 않다. 입문자 수준에 못 미친다고 해야할 것이다.
 
-![오른쪽부터 A2+, Zen Air DAC, Raspberry Pi 4](img/물리.jpeg)
+![왼쪽부터 Audioengine A2+, Zen Air DAC, Raspberry Pi 4](img/물리.jpeg)
 
 #### 스피커
 
