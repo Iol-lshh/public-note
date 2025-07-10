@@ -267,7 +267,7 @@ cat /proc/asound/card3/pcm0p/sub0/hw_params
 
 지금도 이 구성을 통해 Mr. Green Apple의 ‘Coffee’를 들으며 글을 마무리 중이다. 블루투스가 제공할 수 없는 밀도감, 그러면서도 아이폰으로 간편히 조작하는 이 만족감은 직접 구성한 시스템 덕분이다.
 
-![](img/mac_applemusic.png)
-
 > 음악이 없는 삶은 잘못된 삶이며, 피곤한 삶이며, 유배당한 삶이기도 하다.   
 > - 우상의 황혼 (프리드리히 니체, 1889)
+
+![](img/applemusic.png)
