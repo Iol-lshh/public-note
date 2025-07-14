@@ -1,6 +1,6 @@
 ---
 title: 실전 TDD 회고
-description: 가장 효율적이고 빠르게 작성 가능한 TDD에 대한 고민
+description: 가장 효율적이고 빠르게 작성 가능한 TDD에 대한 고민 (feat. 바이브 코딩)
 date: 2025-07-13
 category:
   - 회고
@@ -70,69 +70,53 @@ AI 조수한테 테스트를 어떻게 만들어 달라고 하면 좋을까?
 
 ![](img/1_3.png)
 
-스파이로 만들라고 했는데, 자기 마음대로 spy를 지워버렸다. 이런 부분을 수정하며 테스트를 완성시킨다. 그리곤 서비스 단위테스트를 하나 더 만들어놓고는 mock을 덕지덕지 바르고는 verify 하고 있다.
+스파이로 만들라고 했는데, 자기 마음대로 spy를 지워버렸다. 이런 부분을 수정하며 테스트를 완성시킨다. 그리곤 서비스 단위 테스트를 하나 더 만들어놓고는 mock을 덕지덕지 바르고는 verify 하고 있다.
 
-그래도 첫 삽은 떴다. 이 결과물을 AI를 통해 고친다면, 꽤 오래 걸릴 것이다. 이후 코드는 직접 수정하는 것이 효과적이다.
+그래도 첫 삽은 떴다. 이 결과물을 AI를 통해 고친다면, 꽤 오래 걸릴 것이다. **이후 코드는 직접 수정**하는 것이 효과적이다.
 
 ```java
-@SpringBootTest
-class UsersServiceTest {
+@Nested
+@DisplayName("회원가입")
+class register {
+	@Test
+	@DisplayName("회원 가입시 User 저장이 수행된다. ( spy 검증 )")
+	void saveUser_whenUserRegisters() {
+		var spyUsersRepository = spy(usersRepository);
+		UsersService spyUsersService = new UsersService(spyUsersRepository);
 
-    @Autowired
-    private UsersService usersService;
-    @Autowired
-    private UsersRepository usersRepository;
-    @Autowired
-    private DatabaseCleanUp databaseCleanUp;
-    
-    @AfterEach
-    void tearDown() {
-        databaseCleanUp.truncateAllTables();
-    }
+		// act
+		UsersModel result = spyUsersService.register("testUser",
+				Gender.MALE,
+				"1993-04-09",
+				"test@gmail.com");
 
-    @Nested
-    @DisplayName("회원가입")
-    class register {
-        @Test
-        @DisplayName("회원 가입시 User 저장이 수행된다. ( spy 검증 )")
-        void saveUser_whenUserRegisters() {
-            var spyUsersRepository = spy(usersRepository);
-            UsersService spyUsersService = new UsersService(spyUsersRepository);
+		// verify
+		verify(spyUsersRepository).existsByLoginId("testUser");
+		verify(spyUsersRepository).save(any(UsersModel.class));
+		assertNotNull(result);
+		assertEquals("testUser", result.getLoginId());
+	}
 
-            // act
-            UsersModel result = spyUsersService.register("testUser",
-                    Gender.MALE,
-                    "1993-04-09",
-                    "test@gmail.com");
+	@Test
+	@DisplayName("이미 가입된 ID로 회원가입 시도 시, 실패한다.")
+	void failToRegister_whenLoginIdAlreadyExists() {
+		// arrange
+		usersService.register("testUser",
+				Gender.MALE,
+				"1993-04-09",
+				"test@gmail.com");
 
-            // verify
-            verify(spyUsersRepository).existsByLoginId("testUser");
-            verify(spyUsersRepository).save(any(UsersModel.class));
-            assertNotNull(result);
-            assertEquals("testUser", result.getLoginId());
-        }
+		// act
+		CoreException exception = assertThrows(CoreException.class, () -> {
+			usersService.register("testUser",
+					Gender.FEMALE,
+					"1993-04-09",
+					"test@naver.com");
+		});
 
-        @Test
-        @DisplayName("이미 가입된 ID로 회원가입 시도 시, 실패한다.")
-        void failToRegister_whenLoginIdAlreadyExists() {
-            // arrange
-            usersService.register("testUser",
-                    Gender.MALE,
-                    "1993-04-09",
-                    "test@gmail.com");
-
-            // act
-            CoreException exception = assertThrows(CoreException.class, () -> {
-                usersService.register("testUser",
-                        Gender.FEMALE,
-                        "1993-04-09",
-                        "test@naver.com");
-            });
-
-            // assert
-            assertEquals(exception.getErrorType(), ErrorType.CONFLICT);
-        }
-    }
+		// assert
+		assertEquals(exception.getErrorType(), ErrorType.CONFLICT);
+	}
 }
 ```
 
