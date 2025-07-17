@@ -50,7 +50,7 @@ tags:
 
 ### RED
 
-이런 도구들을 이용해 빠르게 애플리케이션의 요구사항 기능을 먼저 테스트로 작성한다. 이것이 TDD의 Red다. 하지만 요구사항만 보고 기능의 테스트를 완성시키기가 좀 막막할 수도 있다. 원래 빈 종이에 첫 선을 그리는게 가장 어렵지 않은가. 이럴 때 AI 조수가 있다면 어떨까?
+이런 도구들을 이용해 빠르게 애플리케이션의 요구사항 기능을 먼저 테스트로 작성한다. 이것이 TDD의 Red다. 하지만 요구사항만 보고 기능의 테스트를 완성시키기가 좀 막막할 수도 있다. 원래 빈 종이에 첫 선을 그리는게 가장 어렵지 않은가. 이럴 때 AI 조수가 등장한다.
 
 AI 조수한테 테스트를 어떻게 만들어 달라고 하면 좋을까?
 
@@ -72,7 +72,7 @@ AI 조수한테 테스트를 어떻게 만들어 달라고 하면 좋을까?
 
 ![](img/1_3.png)
 
-스파이로 만들라고 했는데, 자기 마음대로 spy를 지워버렸다. 그리곤 서비스 단위 테스트를 하나 더 만들어놓고는 mock을 덕지덕지 바르고는 verify 하고 있다. 이런 부분은 수정이 필요하다. 이 결과물을 AI를 통해 고친다면, 꽤 오래 걸릴 것이다. **이후 코드는 직접 수정**하는 것이 빠르다.
+스파이로 만들라고 했는데, 자기 마음대로 spy를 지워버렸다. 그리곤 서비스 단위 테스트를 하나 더 만들어놓고는 mock을 덕지덕지 바르고는 verify 하고 있다. 이런 부분은 수정이 필요하다. 이 결과물을 AI를 통해 고친다면, 꽤 오래 걸릴 것이다. AI에게는 밑그림 스케치만을 부탁한 것이다. **이후 코드는 직접 수정**하는 것이 빠르다.
 
 ```java
 @Nested
@@ -81,17 +81,14 @@ class register {
 	@Test
 	@DisplayName("회원 가입시 User 저장이 수행된다. ( spy 검증 )")
 	void saveUser_whenUserRegisters() {
-		var spyUsersRepository = spy(usersRepository);
-		UsersService spyUsersService = new UsersService(spyUsersRepository);
-
 		// act
-		UsersModel result = spyUsersService.register("testUser",
+		UsersModel result = spyUsersService.signUp(
+				"testUser",
 				Gender.MALE,
 				"1993-04-09",
 				"test@gmail.com");
 
 		// verify
-		verify(spyUsersRepository).existsByLoginId("testUser");
 		verify(spyUsersRepository).save(any(UsersModel.class));
 		assertNotNull(result);
 		assertEquals("testUser", result.getLoginId());
@@ -101,14 +98,17 @@ class register {
 	@DisplayName("이미 가입된 ID로 회원가입 시도 시, 실패한다.")
 	void failToRegister_whenLoginIdAlreadyExists() {
 		// arrange
-		usersService.register("testUser",
+		String alreadyExists = "testUser"
+		usersService.signUp(
+				alreadyExists,
 				Gender.MALE,
 				"1993-04-09",
 				"test@gmail.com");
 
 		// act
 		CoreException exception = assertThrows(CoreException.class, () -> {
-			usersService.register("testUser",
+			usersService.signUp(
+					alreadyExists,
 					Gender.FEMALE,
 					"1993-04-09",
 					"test@naver.com");
