@@ -7,7 +7,7 @@ category:
   - 번역
   - test
 ---
-- 원본: [# On the Diverse And Fantastical Shapes of Testing(Martin Fowler, 2021.06.02)](https://martinfowler.com/articles/2021-test-shapes.html)
+- 원본: [On the Diverse And Fantastical Shapes of Testing(Martin Fowler, 2021.06.02)](https://martinfowler.com/articles/2021-test-shapes.html)
 
 최근 트위터 등에서 팀이 테스트 노력을 어떻게 분배해야 하는지에 대한 논의가 다시 활발해졌습니다. 특히 팀 브레이는 자동화된 테스팅을 진지하게 받아들여야 한다고 설득력 있게 주장합니다. 제 글에 익숙한 분이라면 제가 그에게 전적으로 동의한다는 것을 아실 것입니다.
 
