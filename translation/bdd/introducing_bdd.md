@@ -3,6 +3,9 @@ title: Introducing BDD 번역
 date: 2025-07-18
 description: BDD에 대한 소개(2006)
 author: North Dan
+category:
+  - test
+  - 번역
 ---
 - 원본: [Introducing BDD(North Dan, 2006)](https://dannorth.net/introducing-bdd/)
 

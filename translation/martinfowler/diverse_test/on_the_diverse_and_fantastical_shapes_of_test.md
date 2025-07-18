@@ -3,6 +3,9 @@ title: On the Diverse And Fantastical Shapes of Testing 번역
 date: 2025-07-18
 description: Pyramids, honeycombs, trophies 그리고 unit test의 의미
 author: Martin Fowler
+category:
+  - 번역
+  - test
 ---
 - 원본: [# On the Diverse And Fantastical Shapes of Testing(Martin Fowler, 2021.06.02)](https://martinfowler.com/articles/2021-test-shapes.html)
 
