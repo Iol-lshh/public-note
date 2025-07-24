@@ -123,7 +123,7 @@ MySQL(InnoDB)은 MSSQL의 Lock을 이용한 단순한 트랜잭션 구현 방식
 - **MVCC**(Multi Version Concurrency Control): 다중 버전 동시성 제어. 데이터베이스 관리 시스템에서 데이터베이스에 대한 동시 액세스를 제공하고 프로그래밍 언어에서 트랜잭션 메모리를 구현하는 데 일반적으로 사용되는 **비잠금 동시성 제어 방법.** **읽기 작업이 쓰기 작업을 블록하지 않게 한다.**
 - **Redo Log**: 트랜잭션 커밋을 보장하거나 크래시 복구를 위한 로그 파일(`ib_logfile0`, `ib_logfile1`)
   - ex) `[TRX_ID: 1001 | Space ID: 5 | Page No: 123 | Offset: 64 | Data: balance=50 | Log Type: MLOG_WRITE]` (의사코드)
-- **Undo Log**: **Undo는** 마지막으로 변경한 내용을 지우고 이전 상태로 되돌리는 행위로, 이를 위해 이전 상태를 저장해두는 로그 파일(`ibdata1` 또는 `undo tablespaces`).
+- **Undo Log**: **Undo는** 마지막으로 변경한 내용을 지우고 이전 상태로 되돌리는 행위로, 이를 위해 이전 상태를 저장해두는 로그 파일(`ibdata1` 또는 `undo tablespaces`).
   - ex) `[TRX_ID: 1001 | Space ID: 5 | Page No: 123 | Offset: 64 | Before Image: balance=100 | Log Type: MLOG_UNDO_UPDATE | Prev Undo Pointer: NULL]` (의사코드)
 - **트랜잭션 아이디**(TRX_ID): 트랜잭션을 식별하는 ID
 - **DB_TRX_ID**: 모든 레코드에는 `DB_TRX_ID`라는 숨겨진 시스템 열이 있어, 이 레코드를 마지막으로 수정한 트랜잭션 ID를 저장한다.

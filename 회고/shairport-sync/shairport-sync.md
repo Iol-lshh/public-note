@@ -168,7 +168,7 @@ sudo ufw delete 3   # 위 출력 기준
 lsusb
 ```
 
-USB에서 확인 했다면, ALSA(Advanced Linux Sound Architecture) 플레이에 연결된 디바이스 확인한다.
+USB에서 확인 했다면, ALSA(Advanced Linux Sound Architecture) 플레이에 연결된 디바이스 확인한다.
 
 ```shell
 aplay -l

@@ -74,7 +74,7 @@ Extreme Programming(Beck, 2004)을 이야기하려는 것이 아니다. 처음�
 
 리팩토링이 기능을 동일하게 유지하며 유지 보수성을 개선하기 위해 프로그램의 구조를 바꾸는 것이라면, 최적화는 프로그램의 시간이나 자원 사용량 등의 정량적 수치의 개선을 위한 것을 의미한다.
 
-|        | New Feature | Bug Fix | Refactoring | Optimizing |
+|        | New Feature | Bug Fix | Refactoring | Optimizing |
 | ------ | ----------- | -------- | ----------- | ---------- |
 | 구조     | 수정          | 수정       | 수정          | ❌          |
 | 새로운 기능 | 수정          | ❌        | ❌           | ❌          |
