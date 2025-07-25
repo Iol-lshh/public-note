@@ -101,8 +101,8 @@ tags:
 
 다음은 시나리오 작성에 대한 두 가지 대표적인 방식이다.
 
-- User Story
-- Usecase
+- **User Story**
+- **Usecase**
 
 ![](img/유스케이스vs사용자스토리.jpg)
 
