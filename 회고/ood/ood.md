@@ -19,9 +19,11 @@ tags:
 
 ## 객체(Object)의 기원
 
-**1966년**, 노르웨이 컴퓨팅 센터(Norsk Regnesentral(NR))에서 두 프로그래머는 어떤 현상에 의문을 갖게 된다. 알골(ALGOL) 언어의 **함수 호출 스택 프레임(stack frame)을 힙(heap)으로 옮겼을 때**, 함수 호출이 반환된 이후에도 함수에서 선언된 지역 변수가 오랫동안 유지될 수 있다는 사실을 알게된다. 이런 함수의 형태는 훗날 **클래스와 생성자**라고 불리게 된다. 그렇게 객체 지향(OO) 프로그래밍의 초기 아이디어가 세상에 알려진다. (Ole Johan Dahl & Kristen Nygaard, 1966) **다익스트라**(Edsger Wybe Dijkstra)가 점프(goto)를 쓰지 말자고 주장하기보다도 2년 전이다. ([Go To Statement Considered Harmful](https://dl.acm.org/doi/pdf/10.1145/362929.362947), Edsger Wybe Dijkstra, 1968)
+**1966년**, 노르웨이 컴퓨팅 센터(Norsk Regnesentral(NR))에서 두 프로그래머는 어떤 현상에 의문을 갖게 된다. 알골(ALGOL) 언어의 **함수 호출 스택 프레임(stack frame)을 힙(heap)으로 옮겼을 때**, 함수 호출이 반환된 이후에도 함수에서 선언된 지역 변수가 오랫동안 유지될 수 있다는 사실을 알게된다. 이런 함수의 형태는 훗날 **클래스와 생성자**라고 불리게 된다. 그렇게 객체 지향(OO) 프로그래밍의 초기 아이디어가 세상에 알려진다. (Ole Johan Dahl & Kristen Nygaard, 1966) 
 
-객체지향을 이용해서 시뮬레이션 전용 언어인 Simula가 만들어졌다.([Simula](https://en.wikipedia.org/wiki/Simula), 1968)  아래는 Simula로 작송된 간단한 객체의 모습이다.
+(**다익스트라**(Edsger Wybe Dijkstra)가 점프(goto)를 쓰지 말자고 주장하기보다도 2년 전이다. ([Go To Statement Considered Harmful](https://dl.acm.org/doi/pdf/10.1145/362929.362947), Edsger Wybe Dijkstra, 1968))
+
+그들은 객체지향을 이용해서 시뮬레이션 전용 언어인 Simula를 만들었다.([Simula](https://en.wikipedia.org/wiki/Simula), 1968)  아래는 Simula로 작성된 간단한 객체의 모습이다.
 
 ```simula
 Begin
@@ -62,11 +64,13 @@ Begin
 End;
 ```
 
-Simula는 [객체](https://en.wikipedia.org/wiki/Object_(computer_science) "객체(컴퓨터 과학)"),  [클래스](https://en.wikipedia.org/wiki/Class_(computer_programming) "수업(컴퓨터 프로그래밍)"), [상속](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming) "상속(객체 지향 프로그래밍)"), [코루틴](https://en.wikipedia.org/wiki/Coroutine "코루틴") 등등의 특징을 갖고 있었다. 그리고 10년이 흘러 Smaltalk가 등장한다.
+Simula는 [객체](https://en.wikipedia.org/wiki/Object_(computer_science) "객체(컴퓨터 과학)"),  [클래스](https://en.wikipedia.org/wiki/Class_(computer_programming) "수업(컴퓨터 프로그래밍)"), [상속](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming) "상속(객체 지향 프로그래밍)"), [코루틴](https://en.wikipedia.org/wiki/Coroutine "코루틴") 등등의 특징을 갖고 있었다. 하지만 Simula는 범용 컴퓨터 언어가 아닌 시뮬레이션 전용의 언어였으며, 현대의 객체 지향에 대한 이론이라고 보기엔 거리가 멀었다. 그렇게 10년이 흘러 Smaltalk가 등장한다.
 
 ### 객체 지향 (Object Oriented)
 
-1970년대, 본래 **분자생물학** 학사(수학 복수)에서 컴퓨터과학 박사로 전공을 옮겨간 앨런 케이(Alan Kay)는 Simula에 영향을 받은 범용 프로그래머 언어인 스몰토크(Smalltalk)를 세상에 내놓는다.
+1970년대, 본래 **분자생물학** 학사(수학 복수)에서 컴퓨터과학 박사로 전공을 옮겨간 앨런 케이(Alan Kay)는 Simula에 영향을 받은 범용 프로그래머 언어이며, 객체지향적 언어인 스몰토크(Smalltalk)를 세상에 내놓는다. 앨런 케이는 스몰토크를 세상에 내놓으면서 세상에 지금과 같은 객체지향 이론을 이야기했다.
+
+그런 앨런 케이에게 객체 지향에 대해서 물어본다면 무엇이라 할까? 다음은 그 질문에 대한 답변이다.
 
 > 저에게 OOP는 오직 **메시징**, **상태-프로세스**의 **지역적 보존 및 보호와 숨김**, 그리고 모든 것의 극단적인 **지연 바인딩**(late-binding)만을 의미합니다. - [Dr. Alan Kay  on the Meaning of “Object-Oriented Programming”](http://userpage.fu-berlin.de/~ram/pub/pub_jf47ht81Ht/doc_kay_oop_en) (Alan Kay, 2003)
 
@@ -77,9 +81,9 @@ Simula는 [객체](https://en.wikipedia.org/wiki/Object_(computer_science) "객
 - 지역적 보존, 보호, 숨김 - **캡슐화**(encapsulation)
 - 극단적 지연 바인딩 - 클래스와 인스턴스
 
-이 세 가지에 집중한다. 그는 이것이 객체 "**지향**" 이라고 이야기한다.
+이 네 가지에 집중한다. 그는 이것이 객체 "**지향**" 이라고 이야기한다.
 
-객체 지향의 다른 핵심 개념인 상속(inheritance)이나 다형성(polymorphism) 개념은 Simula에도 있었지만, 그것이 현대적인 의미로 체계화 된 것은 좀 더 이후의 일이다. ([On Understanding Types, Data Abstraction, and Polymorphism](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)(Luca Cardelli & Wegner, Peter, 1985))
+객체 지향의 다른 핵심 개념인 상속(inheritance)이나 다형성(polymorphism) 개념은 Simula에도 있었지만, 그것이 현대적인 의미로 체계화 된 것은 좀 더 이후의 일이었다. ([On Understanding Types, Data Abstraction, and Polymorphism](http://lucacardelli.name/Papers/OnUnderstanding.A4.pdf)(Luca Cardelli & Wegner, Peter, 1985))
 
 이런 역사적 관점에서 봤을 때에도, 상속이나 다형성도 물론 중요하지만, 더 우선적인 것은 "객체의 **책임**(**역할**)과 **관계**"이다. 그리고 이런 관점은 도메인 모델 설계로 이어진다.
 
@@ -91,7 +95,7 @@ Simula는 [객체](https://en.wikipedia.org/wiki/Object_(computer_science) "객
 
 다만 도메인 모델이란 것은 복잡한 엔터프라이즈 시스템이란 이름의 생태계에서 살아간다. 이런 비즈니스 복잡성을 다루기 위해서는 체계적인 접근을 필요로 한다. 여기서 도메인 주도 설계(Domain Driven Design, DDD)와 그 전략적, 전술적 설계 패턴들이 등장한다.
 
-여기서는 거대한 조직의 관계와 흐름보다는, **사용자 관점**에 초점을 맞춰 **스토리를 이야기**하고 **도메인 모델링 - 객체 설계**를 해보겠다.
+이 글은 거대한 조직의 관계와 흐름보다는, **사용자 관점**에 초점을 맞춰 **스토리를 이야기**하고 **도메인 모델링 - 객체 설계**에 대해 정리하고자 한다.
 
 ### 전략 - 도메인 스토리텔링
 
@@ -102,16 +106,18 @@ Simula는 [객체](https://en.wikipedia.org/wiki/Object_(computer_science) "객
 > **요리사 관찰하기**   
 > 토마토 소스를 휘젓는 요리사를 지켜보고 있다고 상상해 보자. 요리사가 정확히 5분 동안 소스를 젓는 것을 시계를 사용해 측정한다. 이 결과를 보고 여러분은 토마토 소스는 항상 5분 동안 저어야 한다는 결론을 내린다. 그러고 나서 집으로 돌아와서 이 과정을 따라하며 5분 동안 소스를 저어도 소스는 여전히 토마토 스프처럼 묽다. 시간이 중요한 요인이 아니었던 것이다. 여러분은 적절한 농도가 될 때까지 소스를 저었다는 점을 놓친 것이다.
 
-먼저, **도메인 언어**를 배워야한다. 스테판 호퍼는 도메인 언어를 배우기 위해서는 소프트웨어 시스템이나 기술적 전문 용어가 없는 순수한 스토리에 집중하라고 말하고 있다. 기술적인 용어들은 **비즈니스를 ==오염==시키고**, 세분성과 범위를 망가뜨린다.
+먼저, **도메인 언어**를 배워야한다. 스테판 호퍼는 도메인 언어를 배우기 위해서는 소프트웨어 시스템이나 기술적 전문 용어가 없는 순수한 스토리에 집중하라고 말하고 있다. 기술적인 용어들은 **비즈니스를 ==오염==시키고**, 세분성과 범위를 망가뜨리기 때문이다.
 
-언어를 배우기 위해서 **있는-그대로**(As-is)인 도메인 스토리로 출발하여, **있게-될**(To-be) 도메인 스토리로 이동하라고 한다. 또한 이 과정에서 **거칠게-세분화**(Coarse-grained)한 도메인 스토리에서 시작하여, **잘게-세분화**(Fine-grained)된 스토리로 나아가라고 하고 있다. 이런 과정에서 용어집(glossary)을 함께 작성한다.
+언어를 배우기 위해서 **있는-그대로**(As-is)인 도메인 스토리로 출발하여, **있게-될**(To-be) 도메인 스토리로 이동해야 한다. 또한 이 과정에서 **거칠게-세분화**(Coarse-grained)한 도메인 스토리에서 시작하여, **잘게-세분화**(Fine-grained)된 스토리로 나아가라고 하고 있다. 이런 과정에서 도출된 유비쿼터스 언어들을 용어집(glossary)에 작성한다.
 
-#### 도메인 스토리 도출
+#### 도메인 스토리텔링 프로세스
 
-1. coarse-grained, as-is, analog
-2. fine-grained, as-is, analog
-3. fine-grained, to-be, analog
-4. fine-grained, to-be, digitalized
+정리하면 다음과 같은 순서로 이루어져야 한다.
+
+1. 거친, 본래 프로세스, 아날로그 구성 (coarse-grained, as-is, analog)
+3. 세밀한, 본래 프로세스, 아날로그 구성 (fine-grained, as-is, analog)
+4. 세밀한, 목표 프로세스, 아날로그 구성 (fine-grained, to-be, analog)
+5. 세밀한, 목표 프로세스, 시스템화된 구성 (fine-grained, to-be, digitalized)
 
 Domain Storytelling에서 보여주는 '자동차 리스'라는 비즈니스에 대한 예제와 함께 보자. (본래 책에서는 1번 과정 이후 바로 디지털화 했을 때, 어떤 오염된 모델이 나오는지 예시를 보여주나, 여기서는 생략했다.)
 
