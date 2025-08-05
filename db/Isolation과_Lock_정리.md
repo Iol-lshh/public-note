@@ -101,6 +101,8 @@ MySQL(innoDB)과 PostgreSQL은 MVCC(undo log)를 통해 트랜잭션 격리를 �
 
 (MSSQL도 MVCC를 옵션(SNAPSHOT Isolation)으로 제공하지만, SNAPSHOT 격리 레벨까지 이야기 하면 MySQL보다 먼저 이야기 하는 이유가 없으니, 우선 여기까지만 이야기하자.)
 
+### MSSQL Lock
+
 MSSQL은 **Update Lock**이라는 특별한 Lock 메커니즘을 제공한다. (정말 직관적인 명칭이 아닐수도 없다. 글 초반에 트랜잭션 시스템이 구현해야 할 두 가지 Read/Update Lock에 대해 정리했었다. 마이크로소프트는 종종 자체적인 방식으로 기능을 설계하지만, 이번만큼은 상당히 직관적인 개념 정의의 기능이 아닐 수 없다.)
 
 - **Update Lock**(U-Lock): U-Lock을 획득한 자원에 대해, 다른 트랜잭션의 U-Lock, X-Lock 획득을 방지한다. S-Lock은 허용된다. U-Lock은 Update 가능성이 있는 단위에 대해 걸어두고, 실제 Update 쿼리 동작시에 X-Lock으로 바뀐다.
@@ -128,6 +130,8 @@ MySQL(InnoDB)은 MSSQL의 Lock을 이용한 단순한 트랜잭션 구현 방식
 - **트랜잭션 아이디**(TRX_ID): 트랜잭션을 식별하는 ID
 - **DB_TRX_ID**: 모든 레코드에는 `DB_TRX_ID`라는 숨겨진 시스템 열이 있어, 이 레코드를 마지막으로 수정한 트랜잭션 ID를 저장한다.
 - **Read View**: 특정 트랜잭션이 데이터를 읽을 때, 그 시점에서 생성되는 데이터의 **스냅샷**(snapshot). 메모리에 저장되며, 트랜잭션이 종료되면 휘발된다.
+
+### ReadView
 
 **ReadView**는 다음으로 구성된다.
 
@@ -176,7 +180,7 @@ MSSQL의 물리적 Lock 방식과 달리 MySQL은 MVCC를 통해 논리적 스�
 - **REPEATABLE READ**: 트랜잭션 시작 시점에 **새로운 Read View를 생성**하고 트랜잭션 종료 후 휘발
 - **SERIALIZABLE**: 트랜잭션 시작 시 Read View 생성. 읽기 시 범위에 S-Next-Key Lock을 획득하며 트랜잭션 종료까지 유지. 쓰기 시 X-Next-Key Lock 획득
 
-### MySQL Update Lock 구현 방식
+### MySQL Lock
 
 MySQL은 MVCC를 활용하여, 동시성을 확보했다. 하지만 자원의 경합 상태에 이르렀을 때, 동기화를 필요로 한다. 이때 잠금을 사용하게 된다. MySQL은 Lock을 두 가지 제공해준다. S-Lock과 X-Lock이다. 이를 쿼리로 명시적으로 획득한다면 다음과 같다.
 
