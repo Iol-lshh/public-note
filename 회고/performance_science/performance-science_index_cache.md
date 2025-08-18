@@ -177,7 +177,7 @@ CREATE INDEX idx_product_state_rel_id ON product (state, released_at DESC, id);
 
 ![](img/explain_aftertuning.png)
 
-Covering index로 조회 자체는 1ms도 되지 않지만, Union all에서 대부분의 비용이 발생했다. 297ms가 최선일까? 이를 해결하기 위한 다른 방안이 있을 것이다. 다만 최대한 심플한 해결책을 적용해야 유지보수의 성능을 높이고, 결함 비율을 낮출 수 있다. 그런 방법 중 하나가 캐시라고 생각한다.
+Covering index로 많이 줄였다. 297ms가 최선일까? 이를 해결하기 위한 다른 방안이 있을 것이다. 다만 최대한 심플한 해결책을 적용해야 유지보수의 성능을 높이고, 결함 비율을 낮출 수 있다. 그런 방법 중 하나가 캐시라고 생각한다.
 
 ### 실험 2 - 애플리케이션에 적절한 **캐시** 전략을 적용
 
