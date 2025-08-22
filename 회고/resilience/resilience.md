@@ -100,7 +100,7 @@ category:
 
 ![](img/http.png)
 
-HTTP에서 클라이언트는 TCP의 3-Hand-Shake를 통해서 멀리 떨어진 서로가 **연결을 동기화**하고, 데이터를 주고 받는다.
+HTTP에서 클라이언트는 TCP의 3-way hand shake를 통해서 멀리 떨어진 서로가 **연결을 동기화**하고, 데이터를 주고 받는다.
 
 유비해서 바라보면, PG와의 연동 또한 매우 유사한 패턴을 갖추고 있음이 보인다. 아이디어가 똑같기 때문이다. PG라는 비동기적 동작에 대해, 블로킹해서 ACK 스러운 상태 동기화적인 답변을 받는 것이 안전하다. 어쩔수 없다 내 제어 밖의 네트워크를 사이에 두고 있으니까.
 
@@ -148,15 +148,15 @@ CPU는 처리가 매우 빠르다. 하지만 파일 시스템, 네트워크 요�
 
 왜 연결과 읽기에 대한 타임아웃을 분리했을까? 외부 시스템은 API의 형태로 연결되기 마련일 텐데, 앞서 살펴본 HTTP의 경우 지연시간이 생기는 부분은 크게 세 부분으로 볼 수 있다.
 
-1. 3-hand shaking
+1. 3-way hand shake
 2. data request - response
-3. 4-hand shaking
+3. 4-way hand shake
 
-HTTP는 TCP라는 전송계층의 통신 프로토콜로 만들어져있다. TCP는 두 엔드포인트의 안전한 연결을 위해 만들어진 프로토콜이다. 이 프로토콜은 3-hand-shaking이라는 과정을 통해 연결을 확정짓는다. 도메인을 찾아가고 마침내 3-hand-shaking을 통해 원격의 노드들이 연결을 동기화한 시점까지를 고려하는 것이 Connection Timeout이다.
+HTTP는 TCP라는 전송계층의 통신 프로토콜로 만들어져있다. TCP는 두 엔드포인트의 안전한 연결을 위해 만들어진 프로토콜이다. 이 프로토콜은 3-way hand shake이라는 과정을 통해 연결을 확정짓는다. 도메인을 찾아가고 마침내 3-way hand shake을 통해 원격의 노드들이 연결을 동기화한 시점까지를 고려하는 것이 Connection Timeout이다.
 
 ![](img/tcp_con.png)
 
-이런 tcp 연결의 3-hand-shaking에서 다음 응답이 오지 않는다면, 재시도를 수행한다. 이런 수행에 대한 기준은 TCP 레이어(OS)에서 이루어진다. 이때 얼마나 기다려야 하는지에 대한 값을 RTO(Retransmission Timeout)이라고 한다. 이 RTO안에 ACK를 받지 못하면, 다시 재전송을 하는 것이다.
+이런 tcp 연결의 3-way hand shake에서 다음 응답이 오지 않는다면, 재시도를 수행한다. 이런 수행에 대한 기준은 TCP 레이어(OS)에서 이루어진다. 이때 얼마나 기다려야 하는지에 대한 값을 RTO(Retransmission Timeout)이라고 한다. 이 RTO안에 ACK를 받지 못하면, 다시 재전송을 하는 것이다.
 
 RTO는 RTT(Round Trip Time, 두 엔드포인트 간 패킷 전송에 필요한 시간)을 기준으로 설정되는데, 두 엔드포인트 사이의 RTT가 1초라면, 최소한 1초의 RTO가 주어져야 한다는 의미다. 단, 처음 연결을 맺을 때는 RTT를 알 수 없기 때문에 **InitRTO**라는 기본 값이 주어진다. **리눅스는 이를 1초로 구현**해두었다. 그리고 이 **RTO는 실패에 대해서 초기 RTO를 기준으로 2배씩 증가**(backoff)한다.
 
@@ -164,7 +164,7 @@ RTO는 RTT(Round Trip Time, 두 엔드포인트 간 패킷 전송에 필요한 �
 
 #### Read Timeout
 
-Connection Timeout이 최소 1RTT 몇 번 수행할지에 대한 고민이었다면, Read Timeout은 HTTP Request 요청으로부터 서버가 HTTP Response를 보내기까지 걸리는 총 시간이다. 단순하게 생각하면 '요청이 모두 전달되는 시간 + 서버의 작업 시간 + 응답의 첫 데이터가 들어오는 시간' 이라고 볼 수 있다.
+Connection Timeout이 최소 1RTT 몇 번 수행할지에 대한 고민이었다면, Read Timeout은 HTTP Request 요청으로부터 서버가 HTTP Response를 보내기까지 걸리는 총 시간이다. 단순하게 생각하면 '**요청이 모두 전달되는 시간 + 서버의 작업 시간 + 응답의 첫 데이터가 들어오는 시간**' 이라고 볼 수 있다.
 
 여기서는 이미 TCP 레벨에서 패킷 연결이 되었으므로, 더이상 OS가 개입하지 않는다. HTTP Response가 없어도 재요청하지 않는다.
 
