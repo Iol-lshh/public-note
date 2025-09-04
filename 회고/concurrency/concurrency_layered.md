@@ -6,6 +6,7 @@ category:
   - book
   - 정리
   - 회고
+  - 동시성
 ---
 ![](img/header.png)
 
