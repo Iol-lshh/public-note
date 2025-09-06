@@ -37,8 +37,8 @@ category:
 
 - 토픽: 논리적 경로
 - 파티션: 물리적 경로
-
-![](img/diagram-apache-kafka.svg)
+- 
+![](img/Pasted%20image%2020250907024513.png)
 
 1. 파티션과 컨슈머는 1:1 일때, 병목이 없다. 
 
