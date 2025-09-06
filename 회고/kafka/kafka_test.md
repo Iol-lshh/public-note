@@ -12,18 +12,26 @@ category:
 
 심지어 예술은 예쁘기라도 하지, 코드는 분석해야하는... 그저 부채다. 그런 코드로 쌓아올린 애플리케이션은 믿을 수 없다. 때문에 테스트를 작성해야한다.
 
-하지만 어떻게, 내 애플리케이션을 테스트하는데, 다른 애플리케이션에서 발행하는 이벤트에 대한 테스트를 작성 가능할까?
+8주차 루퍼스 과정은 지난 주차 애플리케이션 이벤트에 이어, 카프카에 대한 이야기다. 카프카는 분산 로그 저장소이지만, 이벤트 드리븐 아키텍처에서 메세지 브로커로 인기를 얻고있다. 가용성과 속도 측면에서 우수하기 때문이다.
+
+하지만 그래서 고민이 시작된다. 내 애플리케이션을 테스트하는데, 다른 애플리케이션에서 발행하는 이벤트에 대한 테스트는 어떻게 작성 해야할까?
+
+카프카가 아무리 고가용성이라지만, 네트워크는 믿을 수 없고, 내가 작성하는 코드도 동작하는지 확신할 수 없다. 자동화된 테스트 코드를 통해 안전을 보장받아야 마음이 놓인다. 방법을 찾아야 한다.
 
 ---
 
 ## 분해
 
 어떤 부분을 테스트 할 것인가? 비즈니스 로직을 테스트하는 것인가, api를 테스트하는 것인가.
-카프카를 이용하는 부분을 테스트한다는 의미는 인터페이스에 대한 이야기라고 생각한다. 카프카는 브로커로부터 이벤트를 컨슘하여 애플리케이션 내부로 전달하는 핸들링 인터페이스라고 보기 때문이다.
+'카프카를 이용하는 부분'을 테스트한다는 것은 '인터페이스'에 대한 이야기라고 생각한다. 카프카는 브로커로부터 이벤트를 컨슘하여 애플리케이션 내부로 전달하는 **핸들링 인터페이스**이기 때문이다.
 
-카프카를 테스트한다는 것은 애플리케이션의 유스케이스에서 조금 벗어나있다. 내가 테스트하고 싶은 것은, 카프카의 구성 설정에 따른 이야기다. 전체 플로우의 이벤트 발행자(Publisher)에 해당하는 카프카의 프로듀서(Producer) 부분에는 별로 관심이 없다. 알아서 잘 발행하겠지...
+카프카를 테스트한다는 것은 애플리케이션의 유스케이스에서 조금 벗어나있다. 내가 테스트하고 싶은 것은, 카프카의 구성 설정에 대한 이야기다. 전체 플로우의 이벤트 발행자(Publisher)에 해당하는 카프카의 프로듀서(Producer) 부분에는 별로 관심이 없다. 알아서 잘 발행하겠지...
 
 문제는 브로커와 플로우의 이벤트 구독자(Subscriber)에 해당하는 카프카의 컨슈머(Consumer)다.
+
+---
+
+## 카프카 구조
 
 브로커는 토픽과 파티션으로 구성된다.
 
@@ -54,11 +62,36 @@ category:
 
 ![](img/partition_consumer.png)
 
+이런 리밸런싱에 대한 부분은 분명히 중요하다. 하지만 이것은 애플리케이션의 레벨이 아닌 것은 맞다. 마이크로 서비스의 영역이라고 본다. RDBMS로 치면, 인덱스를 설계하는 것과 같다. 애플리케이션의 읽기 속도를 향상하기 위해서는, 비즈니스를 이해하고 애플리케이션을 개발하는 개발자가 쿼리를 작성한다. 그러면서 그 쿼리의 향상을 위해 인덱스를 설계한다. 이를 카프카에 유비해본다면, 카프카의 설정을 잡는 것은 RDBMS의 인덱스를 설계하는 것과 비슷한 단계의 고민이다. 애플리케이션의 레벨은 아니지만, 서비스의 성능에 연관 있다.
+
+하지만 성능이 과연 애플리케이션의 테스트 코드 작성에 유의미할까? 물론 아예 없진 않을 것이다. 하지만 그것은 좀 더 성능 측정 영역이지, 기능 확인 - 회귀 방지와 인수 목적의 테스트 영역이 아니다.
+
+그렇다면 무엇을 테스트해야하나?
+
 ---
 
-## 테스트 작성
+## 이벤트 전달 방법 설계
 
-이제 다시 돌아가서 테스트를 작성해보자. 카프카의 파티션과 컨슈머에 따른 동작을 확인해보고 싶다. 카프카가 필요하다. 스프링 애플리케이션에는 두 가지 방안이 있다.
+이벤트 전달 **구조**에 대한 설계가 아니라, **방법**에 대한 테스트가 필요하다. 카프카의 프로듀서와 컨슈머는 단지 메세지를 브로커에 적재하고, 소비하는 도구다. 적재와 소비 방식에는 여러가지가 있는다. 이런 적재와 소비 방식을 내 비즈니스에 맞게 적절한 설계를 해야한다. 그럼으로써 이벤트 전달 방법을 구현해야한다.
+
+그렇다면 테스트의 대상은 두 가지가 된다.
+
+- 프로듀서는 이벤트를 어떻게 브로커에 올릴 것인가
+- 컨슈머는 이벤트를 어떻게 브로커로 부터 소비할 것인가
+
+### 프로듀서 설계
+
+
+
+### 컨슈머 설계
+
+
+
+---
+
+## 테스트 작성 도구
+
+이제 테스트 도구들을 살펴보자. 카프카의 파티션과 컨슈머에 따른 동작을 확인해보고 싶다. 카프카가 필요하다. 스프링 애플리케이션에는 두 가지 방안이 있다.
 
 - 임베디드 카프카 (`@EmbededKafka`)
 - 카프카 테스트 컨테이너
@@ -67,7 +100,7 @@ category:
 
 #### 임베디드 카프카 (`@EmbededKafka`)
 
-임베디드 카프카는 JVM 안에서 Java 코드 레벨에서 시뮬레이션 한다. 속도가 빠르고, CI 파이프라인에도 부담이 적다. 하지만 실제 Kafka 환경과 다르다.
+임베디드 카프카는 JVM 안에서 Java 코드 레벨에서 시뮬레이션 한다. 속도가 빠르고, CI 파이프라인에도 부담이 적다. 하지만 실제 Kafka 환경과는 조금 다르다.
 
 ```java
 @SpringBootTest
@@ -76,126 +109,15 @@ category:
             "listeners=PLAINTEXT://localhost:0",
             "auto.create.topics.enable=true"
         })
-class EmbeddedKafkaIntegrationTest {
-
-    static final String TOPIC = "demo.internal.topic-v1";
-
-    private static EmbeddedKafkaBroker embeddedKafka;
-
-    // Spring이 주입한 EmbeddedKafkaBroker를 DynamicPropertySource에서 쓰기 위해 보관
-    @Autowired
-    void setEmbedded(EmbeddedKafkaBroker broker) {
-        embeddedKafka = broker;
-        // 컨테이너 리스너들이 브로커 준비될 때까지 기다리게 도와줌(테스트 안정화)
-        broker.getTopics().forEach(t -> ContainerTestUtils.waitForAssignment(
-            broker.getKafkaServers(), broker.getPartitionsPerTopic()));
-    }
-
-    @DynamicPropertySource
-    static void kafkaProps(DynamicPropertyRegistry r) {
-        r.add("spring.kafka.bootstrap-servers", () -> embeddedKafka.getBrokersAsString());
-        // 필요 시 테스트용 직렬화/역직렬화 기본값
-        r.add("spring.kafka.consumer.auto-offset-reset", () -> "latest");
-        r.add("spring.kafka.consumer.key-deserializer", () -> "org.apache.kafka.common.serialization.StringDeserializer");
-        r.add("spring.kafka.consumer.value-deserializer", () -> "org.apache.kafka.common.serialization.StringDeserializer");
-        r.add("spring.kafka.producer.key-serializer", () -> "org.apache.kafka.common.serialization.StringSerializer");
-        r.add("spring.kafka.producer.value-serializer", () -> "org.apache.kafka.common.serialization.StringSerializer");
-    }
-
-    @Autowired KafkaTemplate<String, String> kafkaTemplate;
-    @Autowired TestListener listener;
-
-    @Test
-    void produce_and_consume_with_embedded_kafka() throws InterruptedException {
-        var key = "order-1";
-        var payload = "hello-embedded";
-        kafkaTemplate.send(TOPIC, key, payload).join();
-
-        var record = listener.queue.poll(Duration.ofSeconds(5).toMillis(), java.util.concurrent.TimeUnit.MILLISECONDS);
-        assertThat(record).isNotNull();
-        assertThat(record.key()).isEqualTo(key);
-        assertThat(record.value()).isEqualTo(payload);
-    }
-
-    // 테스트 전용 리스너: 실제 앱 리스너 대신, 수신 메시지를 큐에 쌓아 단언하기 쉽게 함
-    static class TestListener {
-        final BlockingQueue<ConsumerRecord<String, String>> queue = new LinkedBlockingQueue<>();
-
-        @KafkaListener(id = "embedded-test-listener", topics = TOPIC)
-        public void onMessage(ConsumerRecord<String, String> rec) {
-            queue.offer(rec);
-        }
-    }
-
-    @TestConfiguration
-    static class Cfg {
-        @Bean TestListener testListener() { return new TestListener(); }
-    }
-}
 ```
 
 #### Kafka Testcontainers
 
 실제 카프카를 도커 컨테이너로 띄운다. 초기화 비용은 크지만, 실제 운영 환경과 유사한 통합 테스트를 수행시킬 수 있다. 실제 카프카를 띄우는 것이기 때문에, 신뢰성이 매우 높다. 브로커 장애, 리밸런싱, 네트워크 지연을 설정하여 시뮬레이션이 가능하다.
 
-```java
-@SpringBootTest
-@Testcontainers
-class KafkaTestcontainersIntegrationTest {
-
-    static final String TOPIC = "demo.internal.topic-v1";
-
-    // Confluent Kafka 이미지 사용 (버전은 프로젝트에 맞게 고정하세요)
-    @Container
-    static final KafkaContainer KAFKA =
-        new KafkaContainer(DockerImageName.parse("confluentinc/cp-kafka:7.6.1"));
-
-    @DynamicPropertySource
-    static void kafkaProps(DynamicPropertyRegistry r) {
-        r.add("spring.kafka.bootstrap-servers", KAFKA::getBootstrapServers);
-        r.add("spring.kafka.consumer.auto-offset-reset", () -> "latest");
-        r.add("spring.kafka.consumer.key-deserializer", () -> "org.apache.kafka.common.serialization.StringDeserializer");
-        r.add("spring.kafka.consumer.value-deserializer", () -> "org.apache.kafka.common.serialization.StringDeserializer");
-        r.add("spring.kafka.producer.key-serializer", () -> "org.apache.kafka.common.serialization.StringSerializer");
-        r.add("spring.kafka.producer.value-serializer", () -> "org.apache.kafka.common.serialization.StringSerializer");
-        // 필요 시, acks/compression/retries 등 운영과 유사하게 맞출 수 있음
-    }
-
-    @Autowired KafkaTemplate<String, String> kafkaTemplate;
-    @Autowired TestListener listener;
-
-    @Test
-    void produce_and_consume_with_testcontainers() throws InterruptedException {
-        var key = "order-2";
-        var payload = "hello-testcontainers";
-        kafkaTemplate.send(TOPIC, key, payload).join();
-
-        var record = listener.queue.poll(Duration.ofSeconds(10).toMillis(), java.util.concurrent.TimeUnit.MILLISECONDS);
-        assertThat(record).isNotNull();
-        assertThat(record.key()).isEqualTo(key);
-        assertThat(record.value()).isEqualTo(payload);
-    }
-
-    static class TestListener {
-        final BlockingQueue<ConsumerRecord<String, String>> queue = new LinkedBlockingQueue<>();
-
-        @KafkaListener(id = "tc-test-listener", topics = TOPIC)
-        public void onMessage(ConsumerRecord<String, String> rec) {
-            queue.offer(rec);
-        }
-    }
-
-    @org.springframework.boot.test.context.TestConfiguration
-    static class Cfg {
-        @Bean TestListener testListener() { return new TestListener(); }
-    }
-}
-```
-
 ---
 
-작성중...
-
+카프카에는 커넥터라던가 스트림이라던가 KsqlDB라던가 CDC라던가 하는 다양한 구현들이 존재한다. 하지만 그 기반은 모두 프로듀서-브로커-컨슈머의 구조로 구현된다.
 
 ### 참조
 
